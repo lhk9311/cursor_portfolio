@@ -1,0 +1,197 @@
+/* tokens.json — responsive/Desktop 값 기준 CSS 변수 (디자인 토큰명과 동일) */
+
+:root {
+  --color-accent-main: #21a0aa;
+  --color-accent-sub: #f94f46;
+  --color-accent-bright: #fdcb2a;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #5d5d5d;
+
+  --font-family-Montserrat: Montserrat, sans-serif;
+  --font-family-pretendard: pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
+
+  --width-container: 1920px;
+  --width-container-inner: 1740px;
+  --width-header: 1740px;
+  --width-header-logo: 226px;
+  --width-section: 1740px;
+  --width-section-inner: 1740px;
+  --width-hero-img: 932px;
+  --width-teamproject-left-box: 547px;
+
+  /* Figma Desktop 프레임 메타(node 21:15~21:21) — tokens.json에 없는 레이아웃 치수 */
+  --width-header-half: calc(var(--width-section-inner) / 2);
+  --width-hero-main-title: 873px;
+  --width-hero-sub-text: 498px;
+  --padding-left-hero-sub-text-inner: 160px;
+  --width-hero-sub-text-inner: 338px;
+  --height-desktop-section-hero-figma: 1011px;
+  --min-height-hero-inner-figma: 546px;
+
+  --font-hero-main-tiltle: 158px;
+  --font-big-caption: 18px;
+  --font-en-text: 24px;
+
+  --padding-vertical-header: 20px;
+  --padding-top-hero: 48px;
+  --padding-top-hero-main-title: 132px;
+
+  --gap-hero-inner: 369px;
+  --gap-small-title-box: 32px;
+  --gap-section-text-box: 8px;
+  --gap-about-edu-text: 10px;
+  --gap-about-inner: 80px;
+
+  --height-section-hero: 1188px;
+  --height-hero-img: 984px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-family-Montserrat);
+}
+
+/* ---------- desktop-header ---------- */
+
+.desktop-header {
+  width: 100%;
+  max-width: var(--width-container);
+  margin-inline: auto;
+  background-color: var(--color-white);
+}
+
+.desktop-header .desktop-header-inner {
+  width: min(100%, var(--width-section-inner));
+  max-width: var(--width-header);
+  margin-inline: auto;
+  padding-top: var(--padding-vertical-header);
+  padding-bottom: var(--padding-vertical-header);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.desktop-header .logo {
+  flex: 0 0 var(--width-header-half);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.desktop-header .logo-img {
+  display: block;
+  width: var(--width-header-logo);
+  height: auto;
+}
+
+.desktop-header .gnb {
+  flex: 0 0 var(--width-header-half);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--gap-about-inner);
+}
+
+.desktop-header .gnb-link {
+  font-family: var(--font-family-Montserrat);
+  font-weight: 600;
+  font-size: var(--font-big-caption);
+  line-height: var(--font-big-caption);
+  color: var(--color-black);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.desktop-header .gnb-link:hover {
+  color: var(--color-accent-main);
+}
+
+/* ---------- desktop-section-hero ---------- */
+
+.desktop-section-hero {
+  position: relative;
+  width: 100%;
+  max-width: var(--width-container);
+  margin-inline: auto;
+  min-height: var(--height-desktop-section-hero-figma);
+  background-color: var(--color-white);
+  overflow: hidden;
+}
+
+.desktop-section-hero .hero-inner {
+  width: min(100%, var(--width-section-inner));
+  max-width: var(--width-section);
+  margin-inline: auto;
+  padding-top: var(--padding-top-hero);
+  min-height: var(--min-height-hero-inner-figma);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap-hero-inner);
+}
+
+.desktop-section-hero .hero-main-title {
+  flex: 0 0 var(--width-hero-main-title);
+  width: var(--width-hero-main-title);
+}
+
+.desktop-section-hero .hero-main-title-text {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 900;
+  font-size: var(--font-hero-main-tiltle);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.desktop-section-hero .hero-sub-text {
+  flex: 0 0 var(--width-hero-sub-text);
+  width: var(--width-hero-sub-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.desktop-section-hero .hero-sub-text-body {
+  margin: 0;
+  padding-left: var(--padding-left-hero-sub-text-inner);
+  max-width: var(--width-hero-sub-text-inner);
+  font-family: var(--font-family-Montserrat);
+  font-weight: 500;
+  font-size: var(--font-big-caption);
+  line-height: calc(var(--font-big-caption) + var(--gap-about-edu-text));
+  text-align: right;
+  color: var(--color-gray);
+}
+
+/* position 토큰 변수 미사용 — Figma hero-img 프레임 기준 픽셀 직접 입력 */
+.desktop-section-hero .hero-img {
+  position: absolute;
+  left: 870px;
+  top: 120px;
+  width: var(--width-hero-img);
+  height: var(--height-hero-img);
+}
+
+.desktop-section-hero .hero-img-vector {
+  display: block;
+  width: var(--width-hero-img);
+  height: var(--height-hero-img);
+  object-fit: contain;
+}
