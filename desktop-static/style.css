@@ -46,7 +46,7 @@
   /* tokens.json font-family "pp-editorial-new" — 웹: Playfair Display 로드 (HTML Google Fonts) */
   --font-family-pp-editorial-new: "Playfair Display", Georgia, serif;
 
-  --font-section-main-title: 245px;
+  --font-section-main-title: 200px;
   --font-text-box-sub-title: 60px;
   --font-text-box-sub-text: 18px;
   --font-edu-list-text: 22px;
@@ -145,7 +145,7 @@
   --gap-about-edu-text: 10px;
   --gap-about-inner: 80px;
 
-  --padding-top-project: 100px;
+  --padding-top-project: 60px;
   --padding-bottom-project: 0px;
   --gap-project-inner: 80px;
 
@@ -198,7 +198,7 @@
   --height-hero-img: 700px;
 
   /* Figma Desktop `desktop-section-project` — tokens에 없는 치수·간격 */
-  --height-desktop-section-project: 862px;
+  --height-desktop-section-project: 402px;
   --width-project-section-main-title: 1157px;
   --min-height-project-section-main-title: 245px;
   --width-project-sub-title: 1070px;
@@ -578,7 +578,7 @@ body {
   max-width: var(--width-container);
   margin-inline: auto;
   background-color: var(--color-white);
-  padding-bottom: 150px;
+  padding-bottom: 250px;
 }
 
 .desktop-section-skill .frame-1 {
