@@ -1,3 +1,35 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("/font/Pretendard-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/font/Pretendard-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/font/Pretendard-Light.otf") format("opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("/font/PPEditorialNew-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("/font/PPEditorialNew-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("/font/PPEditorialNew-Ultrabold.otf") format("opentype");
+  font-weight: 800;
+}
+
 /* tokens.json — responsive/Desktop 값 기준 CSS 변수 (디자인 토큰명과 동일) */
 
 :root {
@@ -11,6 +43,67 @@
   --font-family-Montserrat: Montserrat, sans-serif;
   --font-family-pretendard: pretendard, -apple-system, BlinkMacSystemFont,
     system-ui, sans-serif;
+  /* tokens.json font-family "pp-editorial-new" — 웹: Playfair Display 로드 (HTML Google Fonts) */
+  --font-family-pp-editorial-new: "Playfair Display", Georgia, serif;
+
+  --font-section-main-title: 245px;
+  --font-text-box-sub-title: 60px;
+  --font-text-box-sub-text: 18px;
+  --font-edu-list-text: 22px;
+  --font-deco-title: 60px;
+  --font-kr-text: 18px;
+
+  --padding-top-about: 320px;
+  --padding-bottom-about: 160px;
+  --padding-horizontal-deco-title: 70px;
+  --padding-top-deco-title: 30px;
+  --padding-bottom-deco-title: 20px;
+
+  --gap-about-main-text: 72px;
+  --gap-about-bottom-box: 66px;
+  --gap-teamproject-left-box-text-box: 16px;
+
+  --radius-small-title-box: 34px;
+
+  --rotate-skill-text-3: -2;
+  --rotate-skill-text-1: 0;
+  --rotate-skill-text-2: 5;
+  --rotate-skill-text-4: 4;
+  --rotate-skill-text-5: 0;
+  --rotate-skill-text-6: 0;
+  --rotate-skill-text-7: -3;
+
+  --font-skill-text: 100px;
+  --padding-top-skill-text: 40px;
+  --padding-bottom-skill-text: 20px;
+  --padding-horizontal-skill-text: 100px;
+  --padding-vertical-skill: 200px;
+  --lineheight-skill-text: 100px;
+  --radius-skill-text: 80px;
+  --height-skill-frame: 1371px;
+
+  /* Figma Desktop `desktop-section-skill` 메타 — tokens.json에 없는 프레임 치수 */
+  --height-desktop-section-skill: 1840px;
+  --padding-horizontal-skill-text: 60px;
+  --width-skill-text-1: 380px;   /* JAVA */
+  
+  --width-skill-text-2: 800px;   /* SPRING BOOT */
+  --width-skill-text-3: 745px;   /* JAVASCRIPT */
+  --width-skill-text-4: 480px;   /* REACT */
+  --width-skill-text-5: 580px;   /* ORACLE */
+  --width-skill-text-6: 920px;   /* DOCKER / AWS */
+
+
+  /* Figma Desktop `desktop-section-about` 메타(프레임 치수) — tokens.json 전용 width 토큰 없음 */
+  --height-desktop-section-about: 1269px;
+  --width-about-section-main-title: 432px;
+  --min-height-about-section-main-title: 230px;
+  --width-paper-airplane-frame: 133px;
+  --height-paper-airplane-frame: 100px;
+  --width-about-bottom-bot: 925px;
+  --width-edu-title-area: 198px;
+  /* about-inner: section-main-title(높이 245) → about-main-text(y=341) 간격 */
+  --gap-about-title-to-main-text: 96px;
 
   --width-container: 1920px;
   --width-container-inner: 1740px;
@@ -18,21 +111,29 @@
   --width-header-logo: 226px;
   --width-section: 1740px;
   --width-section-inner: 1740px;
-  --width-hero-img: 932px;
+  --width-hero-img: 750px;
   --width-teamproject-left-box: 547px;
+  --width-teamproject-right-box: 474px;
+  --width-teamproject-list: 1440px;
+  --width-teamproject-title: 1440px;
+  --width-teamproject-img-girl: 781px;
+  --width-teamproject-sun: 196px;
+  --width-small-title-box: 1440px;
+  --width-teamproject-left-box-text-box: 543px;
 
   /* Figma Desktop 프레임 메타(node 21:15~21:21) — tokens.json에 없는 레이아웃 치수 */
   --width-header-half: calc(var(--width-section-inner) / 2);
   --width-hero-main-title: 873px;
-  --width-hero-sub-text: 498px;
-  --padding-left-hero-sub-text-inner: 160px;
-  --width-hero-sub-text-inner: 338px;
-  --height-desktop-section-hero-figma: 1011px;
+  --width-hero-sub-text: 400px;
+  --padding-left-hero-sub-text-inner: 0px;
+  --width-hero-sub-text-inner: 400px;
+  --height-desktop-section-hero-figma: 820px;
   --min-height-hero-inner-figma: 546px;
 
   --font-hero-main-tiltle: 158px;
   --font-big-caption: 18px;
   --font-en-text: 24px;
+  --font-edu-title: 28px;
 
   --padding-vertical-header: 20px;
   --padding-top-hero: 48px;
@@ -44,8 +145,68 @@
   --gap-about-edu-text: 10px;
   --gap-about-inner: 80px;
 
+  --padding-top-project: 100px;
+  --padding-bottom-project: 0px;
+  --gap-project-inner: 80px;
+
+  --padding-top-teamproject: 80px;
+  --padding-bottom-teamproject: 0px;
+  --padding-vertical-small-title-box: 118px;
+  --padding-vertical-teamproject-list: 57px;
+  --padding-horizontal-teamproject-list: 80px;
+
+  --gap-teamproject: 80px;
+  --gap-teamproject-box: 84px;
+  --gap-teamproject-left-box: 28px;
+  --gap-small-sub-box: 8px;
+
+  --font-small-main-title: 132px;
+  --font-small-sub-tilte: 30px;
+  --font-small-sub-text: 18px;
+  --font-num-title: 100px;
+  --font-project-name: 40px;
+  --font-small-caption: 16px;
+
+  --radius-teamproject-list-box: 30px;
+
+  /* Figma `teamproject-img` 프레임 — tokens에 높이 없음 */
+  --height-teamproject-illustration: 927px;
+  --height-teamproject-img-girl: 775px;
+  --height-teamproject-sun: 194px;
+  --height-teamproject-list-mockup: 367px;
+
+  --width-contact: 1920px;
+  --width-contact-inner: 1740px;
+  --padding-top-contact: 140px;
+  --padding-bottom-contact: 140px;
+  --padding-horizontal-tel: 100px;
+  --padding-top-tel: 40px;
+  --padding-bottom-tel: 20px;
+  --lineheight-contact-tel: 100px;
+
+  /* Figma `desktop-section-contact` — 토큰에 없는 치수 */
+  --height-desktop-section-contact: 1056px;
+  --width-contact-section-main-title: 1157px;
+  --width-contact-sub-title: 883px;
+  --width-contact-sub-text: 495px;
+  --width-contact-tel-box: 771px;
+  --height-contact-tel-box: 160px;
+  --gap-contact-inner-stack: 80px;
+  --rotate-contact-deco-title: 15;
+
   --height-section-hero: 1188px;
-  --height-hero-img: 984px;
+  --height-hero-img: 700px;
+
+  /* Figma Desktop `desktop-section-project` — tokens에 없는 치수·간격 */
+  --height-desktop-section-project: 862px;
+  --width-project-section-main-title: 1157px;
+  --min-height-project-section-main-title: 245px;
+  --width-project-sub-title: 1070px;
+  --width-project-sub-text: 400px;
+  /* project-inner: section-main-title(높이 245) → section-text-box(y=341) 간격 */
+  --gap-project-title-to-textbox: 96px;
+  /* STUDENT 배지 기울기 — Figma 시각 기준(토큰에 rotate 없음) */
+  --rotate-project-deco-title: -10;
 }
 
 *,
@@ -89,26 +250,31 @@ body {
   align-items: center;
 }
 
-.desktop-header .logo-img {
-  display: block;
-  width: var(--width-header-logo);
-  height: auto;
+.desktop-header .logo-text {
+  display: inline-block;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 700;
+  font-size: var(--font-edu-title);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-main);
 }
 
 .desktop-header .gnb {
-  flex: 0 0 var(--width-header-half);
+  flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  margin-right: 300px;
   gap: var(--gap-about-inner);
 }
 
 .desktop-header .gnb-link {
   font-family: var(--font-family-Montserrat);
   font-weight: 600;
-  font-size: var(--font-big-caption);
-  line-height: var(--font-big-caption);
+  font-size: var(--font-en-text);
+  line-height: 1.25;
   color: var(--color-black);
   text-decoration: none;
   text-transform: uppercase;
@@ -183,7 +349,7 @@ body {
 /* position 토큰 변수 미사용 — Figma hero-img 프레임 기준 픽셀 직접 입력 */
 .desktop-section-hero .hero-img {
   position: absolute;
-  left: 870px;
+  left: 1050px;
   top: 120px;
   width: var(--width-hero-img);
   height: var(--height-hero-img);
@@ -194,4 +360,1227 @@ body {
   width: var(--width-hero-img);
   height: var(--height-hero-img);
   object-fit: contain;
+}
+
+/* ---------- desktop-section-about ---------- */
+
+.desktop-section-about {
+  width: 100%;
+  max-width: var(--width-container);
+  margin-inline: auto;
+  min-height: var(--height-desktop-section-about);
+  padding-top: var(--padding-top-about);
+  padding-bottom: 80px;
+  background-color: var(--color-white);
+}
+
+.desktop-section-about .about-inner {
+  width: min(100%, var(--width-section-inner));
+  max-width: var(--width-section);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-about-title-to-main-text);
+}
+
+.desktop-section-about .section-main-title {
+  position: relative;
+  width: var(--width-about-section-main-title);
+  min-height: var(--min-height-about-section-main-title);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* position 변수 미사용 — Figma 메타(section-deco-title) 기준 px */
+.desktop-section-about .section-deco-title {
+  position: absolute;
+  left: -109px;
+  top: -64px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--padding-horizontal-deco-title);
+  padding-right: var(--padding-horizontal-deco-title);
+  padding-top: var(--padding-top-deco-title);
+  padding-bottom: var(--padding-bottom-deco-title);
+  background-color: var(--color-accent-main);
+  border-radius: var(--radius-small-title-box);
+  transform: rotate(calc(var(--rotate-skill-text-3) * 1deg));
+}
+
+.desktop-section-about .section-deco-title-text {
+  font-family: var(--font-family-pp-editorial-new);
+  font-weight: 700;
+  font-size: var(--font-deco-title);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.desktop-section-about .about-me-title {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 900;
+  font-size: var(--font-section-main-title);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
+  text-align: center;
+}
+
+/* position 변수 미사용 — Figma 메타(paper-airplane 1 프레임) 기준 px */
+.desktop-section-about .paper-airplane-1 {
+  position: absolute;
+  left: 365px;
+  top: 195px;
+  width: var(--width-paper-airplane-frame);
+  height: var(--height-paper-airplane-frame);
+}
+
+.desktop-section-about .paper-airplane-1-img {
+  display: block;
+  width: var(--width-paper-airplane-frame);
+  height: var(--height-paper-airplane-frame);
+  object-fit: contain;
+}
+
+.desktop-section-about .about-main-text {
+  width: 100%;
+  max-width: var(--width-section-inner);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-about-main-text); /* section-text-box ↔ about-bottom-bot (Figma y 간격 72) */
+}
+
+.desktop-section-about .section-text-box {
+  width: 100%;
+  max-width: var(--width-section-inner);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-section-text-box);
+  text-align: center;
+}
+
+.desktop-section-about .sub-title {
+  width: 100%;
+  max-width: var(--width-section-inner);
+}
+
+.desktop-section-about .sub-title-en {
+  margin: 0;
+  font-family: var(--font-family-pp-editorial-new);
+  font-size: var(--font-text-box-sub-title);
+  line-height: 1.25;
+  color: var(--color-black);
+}
+
+.desktop-section-about .sub-title-en-quote {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.desktop-section-about .sub-title-en-strong {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.desktop-section-about .sub-text {
+  width: 100%;
+  max-width: var(--width-section-inner);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.desktop-section-about .sub-text-kr {
+  margin: 0;
+  max-width: var(--width-teamproject-left-box-text-box);
+  font-family: var(--font-family-pretendard);
+  font-size: var(--font-text-box-sub-text);
+  line-height: calc(var(--font-text-box-sub-text) + var(--gap-about-edu-text));
+  color: var(--color-gray);
+}
+
+.desktop-section-about .about-bottom-bot {
+  width: 100%;
+  max-width: var(--width-about-bottom-bot);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-about-bottom-box);
+}
+
+.desktop-section-about .edu-title {
+  flex: 0 0 var(--width-edu-title-area);
+  width: var(--width-edu-title-area);
+}
+
+.desktop-section-about .edu-title-text {
+  margin: 0;
+  font-family: var(--font-family-pp-editorial-new);
+  font-weight: 600;
+  font-size: var(--font-edu-title);
+  line-height: 1.25;
+  color: var(--color-black);
+}
+
+.desktop-section-about .edu-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-about-edu-text);
+}
+
+.desktop-section-about .edu-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-teamproject-left-box-text-box);
+}
+
+.desktop-section-about .check-icon {
+  flex-shrink: 0;
+  margin-top: calc(var(--gap-about-edu-text) / 2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.desktop-section-about .check-icon img {
+  display: block;
+  width: 14px;
+  height: auto;
+}
+
+.desktop-section-about .edu-list-text {
+  margin: 0;
+  font-family: var(--font-family-pretendard);
+  font-size: var(--font-edu-list-text);
+  line-height: calc(var(--font-edu-list-text) + var(--gap-about-edu-text));
+  color: var(--color-black);
+  text-align: left;
+}
+
+/* ---------- desktop-section-skill (Figma `Frame 1` = .frame-1) ---------- */
+
+.desktop-section-skill {
+  width: 100%;
+  max-width: var(--width-container);
+  margin-inline: auto;
+  background-color: var(--color-white);
+  padding-bottom: 150px;
+}
+
+.desktop-section-skill .frame-1 {
+  position: relative;
+  width: min(100%, var(--width-section-inner));
+  max-width: var(--width-section);
+  min-height: var(--height-skill-frame);
+  margin-inline: auto;
+}
+
+/* position 변수 미사용 — tokens.json `responsive/Desktop` position 값과 동일한 px 직접 기입 */
+
+.desktop-section-skill .skill-icon1 {
+  position: absolute;
+  left: 310px;
+  top: 205px;
+  z-index: 1;
+  width: 125px;
+  height: 124px;
+}
+
+.desktop-section-skill .skill-icon2 {
+  position: absolute;
+  left: 140px;
+  top: 175px;
+  z-index: 1;
+  width: 143px;
+  height: 129px;
+}
+
+.desktop-section-skill .skill-icon3 {
+  position: absolute;
+  left: 210px;
+  top: 576px;
+  z-index: 1;
+  width: 144px;
+  height: 138px;
+}
+
+.desktop-section-skill .skill-icon4 {
+  position: absolute;
+  left: 135px;
+  top: 711px;
+  z-index: 1;
+  width: 229px;
+  height: 196px;
+}
+
+.desktop-section-skill .skill-icon5 {
+  position: absolute;
+  left: 277px;
+  top: 1112px;
+  z-index: 1;
+  width: 101px;
+  height: 130px;
+}
+
+.desktop-section-skill .skill-icon1-img,
+.desktop-section-skill .skill-icon2-img,
+.desktop-section-skill .skill-icon3-img,
+.desktop-section-skill .skill-icon4-img,
+.desktop-section-skill .skill-icon5-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.desktop-section-skill .skill-text-1,
+.desktop-section-skill .skill-text-2,
+.desktop-section-skill .skill-text-3,
+.desktop-section-skill .skill-text-4,
+.desktop-section-skill .skill-text-5,
+.desktop-section-skill .skill-text-6,
+.desktop-section-skill .skill-text-7 {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: var(--radius-skill-text);
+  padding-top: var(--padding-top-skill-text);
+  padding-bottom: var(--padding-bottom-skill-text);
+  padding-left: var(--padding-horizontal-skill-text);
+  padding-right: var(--padding-horizontal-skill-text);
+  box-sizing: border-box;
+}
+
+.desktop-section-skill .skill-text-body {
+  margin: 0;
+  font-family: var(--font-family-pp-editorial-new);
+  font-weight: 700;
+  font-size: var(--font-skill-text);
+  line-height: var(--lineheight-skill-text);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.desktop-section-skill .skill-text-1 {
+  left: 666px;
+  top: 51px;
+  width: var(--width-skill-text-1);
+  transform: rotate(calc(var(--rotate-skill-text-1) * 1deg));
+}
+
+.desktop-section-skill .skill-text-2 {
+  left: 516px;
+  top: 160px;
+  width: var(--width-skill-text-2);
+  transform: rotate(calc(var(--rotate-skill-text-2) * 1deg));
+}
+
+.desktop-section-skill .skill-text-3 {
+  left: 566px;
+  top: 406px;
+  width: var(--width-skill-text-3);
+  transform: rotate(calc(var(--rotate-skill-text-3) * 1deg));
+}
+
+.desktop-section-skill .skill-text-4 {
+  left: 617px;
+  top: 561px;
+  width: var(--width-skill-text-4);
+  transform: rotate(calc(var(--rotate-skill-text-4) * 1deg));
+}
+
+.desktop-section-skill .skill-text-5 {
+  left: 471px;
+  top: 720px;
+  width: var(--width-skill-text-5);
+  transform: rotate(calc(var(--rotate-skill-text-5) * 1deg));
+}
+
+.desktop-section-skill .skill-text-6 {
+  left: 366px;
+  top: 860px;
+  width: var(--width-skill-text-6);
+  transform: rotate(calc(var(--rotate-skill-text-6) * 1deg));
+}
+
+
+/* ---------- desktop-section-project ---------- */
+
+.desktop-section-project {
+  width: 100%;
+  max-width: var(--width-container);
+  margin-inline: auto;
+  min-height: var(--height-desktop-section-project);
+  padding-top: var(--padding-top-project);
+  padding-bottom: var(--padding-bottom-project);
+  background-color: var(--color-white);
+}
+
+.desktop-section-project .project-inner {
+  width: min(100%, var(--width-section-inner));
+  max-width: var(--width-section);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-project-title-to-textbox);
+}
+
+.desktop-section-project .section-main-title {
+  position: relative;
+  width: var(--width-project-section-main-title);
+  min-height: var(--min-height-project-section-main-title);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* position 변수 미사용 — tokens.json `position-project-deco-title` 값과 동일 px */
+.desktop-section-project .section-deco-title {
+  position: absolute;
+  left: -90px;
+  top: -141px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--padding-horizontal-deco-title);
+  padding-right: var(--padding-horizontal-deco-title);
+  padding-top: var(--padding-top-deco-title);
+  padding-bottom: var(--padding-bottom-deco-title);
+  background-color: var(--color-accent-sub);
+  border-radius: var(--radius-small-title-box);
+  transform: rotate(calc(var(--rotate-project-deco-title) * 1deg));
+}
+
+.desktop-section-project .section-deco-title-text {
+  font-family: var(--font-family-Montserrat);
+  font-weight: 800;
+  font-size: var(--font-deco-title);
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.desktop-section-project .project-main-title {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 900;
+  font-size: var(--font-section-main-title);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.desktop-section-project .section-text-box {
+  width: 100%;
+  max-width: var(--width-section-inner);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-section-text-box);
+}
+
+.desktop-section-project .sub-title {
+  width: 100%;
+  max-width: var(--width-section-inner);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.desktop-section-project .project-sub-title-en {
+  margin: 0;
+  max-width: var(--width-project-sub-title);
+  font-family: var(--font-family-pp-editorial-new);
+  font-size: var(--font-text-box-sub-title);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.28;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.desktop-section-project .sub-text {
+  width: 100%;
+  max-width: var(--width-section-inner);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.desktop-section-project .project-sub-text-kr {
+  margin: 0;
+  max-width: var(--width-project-sub-text);
+  font-family: var(--font-family-pretendard);
+  font-size: var(--font-text-box-sub-text);
+  line-height: calc(var(--font-text-box-sub-text) + var(--gap-about-edu-text));
+  text-align: center;
+  color: var(--color-black);
+}
+
+/* ---------- desktop-section-teamproject ---------- */
+
+.desktop-section-teamproject {
+  width: 100%;
+  max-width: var(--width-container);
+  margin-inline: auto;
+  padding-top: var(--padding-top-teamproject);
+  padding-bottom: calc(
+    var(--padding-bottom-teamproject) + var(--gap-teamproject-box)
+  );
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-teamproject);
+}
+
+/* 상단 일러스트 (Figma `teamproject-img`) */
+.desktop-section-teamproject .teamproject-img {
+  position: relative;
+  width: min(100%, var(--width-section-inner));
+  max-width: var(--width-section);
+  min-height: var(--height-teamproject-illustration);
+  margin-inline: auto;
+}
+
+/* position 변수 미사용 — Figma 메타 `teamproject-img-girl` 기준 px */
+.desktop-section-teamproject .teamproject-img-girl {
+  position: absolute;
+  left: 480px;
+  top: 76px;
+  width: var(--width-teamproject-img-girl);
+  height: var(--height-teamproject-img-girl);
+  object-fit: contain;
+}
+
+/* position 변수 미사용 — Figma 메타 `team-img-sun` 기준 px */
+.desktop-section-teamproject .team-img-sun {
+  position: absolute;
+  left: 1108px;
+  top: 0;
+  width: var(--width-teamproject-sun);
+  height: var(--height-teamproject-sun);
+}
+
+.desktop-section-teamproject .team-img-sun-vector {
+  display: block;
+  width: var(--width-teamproject-sun);
+  height: var(--height-teamproject-sun);
+  object-fit: contain;
+}
+
+.desktop-section-teamproject .teamproject-box {
+  width: min(100%, var(--width-section-inner));
+  max-width: var(--width-section);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-teamproject-box);
+}
+
+.desktop-section-teamproject .small-title-box {
+  width: 100%;
+  max-width: var(--width-small-title-box);
+  margin-inline: auto;
+  padding-top: var(--padding-vertical-small-title-box);
+  padding-bottom: var(--padding-vertical-small-title-box);
+  padding-left: var(--padding-horizontal-teamproject-list);
+  padding-right: var(--padding-horizontal-teamproject-list);
+  background-color: var(--color-black);
+  border-radius: var(--radius-teamproject-list-box);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-small-title-box);
+  text-align: center;
+}
+
+.desktop-section-teamproject .small-main-title {
+  width: 100%;
+}
+
+.desktop-section-teamproject .small-main-title-text {
+  margin: 0;
+  font-family: var(--font-family-pp-editorial-new);
+  font-weight: 700;
+  font-size: var(--font-small-main-title);
+  line-height: 1.1;
+  color: var(--color-white);
+}
+
+.desktop-section-teamproject .small-sub-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-small-sub-box);
+  max-width: var(--width-teamproject-title);
+}
+
+.desktop-section-teamproject .small-sub-title-text {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 600;
+  font-size: var(--font-small-sub-tilte);
+  line-height: 1.25;
+  color: var(--color-white);
+}
+
+.desktop-section-teamproject .small-sub-text-body {
+  margin: 0;
+  max-width: var(--width-teamproject-title);
+  font-family: var(--font-family-pretendard);
+  font-size: var(--font-small-sub-text);
+  line-height: calc(var(--font-small-sub-text) + var(--gap-about-edu-text));
+  color: var(--color-white);
+  opacity: 0.92;
+}
+
+.desktop-section-teamproject .teamproject-list {
+  width: 100%;
+  max-width: var(--width-teamproject-list);
+  margin-inline: auto;
+  padding-top: var(--padding-vertical-teamproject-list);
+  padding-bottom: var(--padding-vertical-teamproject-list);
+  padding-left: var(--padding-horizontal-teamproject-list);
+  padding-right: var(--padding-horizontal-teamproject-list);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: var(--radius-teamproject-list-box);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-teamproject-left-box);
+}
+
+.desktop-section-teamproject .left-box {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: var(--width-teamproject-left-box);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-teamproject-left-box);
+}
+
+.desktop-section-teamproject .num-title-text {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 800;
+  font-size: var(--font-num-title);
+  line-height: 1;
+  color: var(--color-accent-main);
+}
+
+.desktop-section-teamproject .text-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-teamproject-left-box-text-box);
+}
+
+.desktop-section-teamproject .title-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--gap-teamproject-left-box);
+}
+
+.desktop-section-teamproject .title-text {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 700;
+  font-size: var(--font-project-name);
+  line-height: 1.2;
+  color: var(--color-black);
+}
+
+.desktop-section-teamproject .big-caption-text {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 500;
+  font-size: var(--font-big-caption);
+  line-height: 1.2;
+  color: var(--color-gray);
+}
+
+.desktop-section-teamproject .en-text-body {
+  margin: 0;
+  max-width: var(--width-teamproject-left-box-text-box);
+  font-family: var(--font-family-pretendard);
+  font-size: var(--font-en-text);
+  line-height: calc(var(--font-en-text) + var(--gap-about-edu-text));
+  color: var(--color-black);
+}
+
+.desktop-section-teamproject .kr-text-body {
+  margin: 0;
+  max-width: var(--width-teamproject-left-box-text-box);
+  font-family: var(--font-family-pretendard);
+  font-size: var(--font-kr-text);
+  line-height: calc(var(--font-kr-text) + var(--gap-about-edu-text));
+  color: var(--color-black);
+}
+
+.desktop-section-teamproject .caption-text {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 600;
+  font-size: var(--font-small-caption);
+  line-height: 1.2;
+  color: var(--color-gray);
+}
+
+.desktop-section-teamproject .teamproject-list-mockup-wrap {
+  flex: 0 0 var(--width-teamproject-right-box);
+  width: var(--width-teamproject-right-box);
+  height: var(--height-teamproject-list-mockup);
+  border-radius: var(--radius-teamproject-list-box);
+  overflow: hidden;
+}
+
+.desktop-section-teamproject .teamproject-list-mockup {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- desktop-section-uiux (Figma 스텁 — 상세 마크업 전) ---------- */
+
+.desktop-section-uiux {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.desktop-section-uiux .uiux-inner {
+  min-height: 0;
+}
+
+/* ---------- desktop-section-contact ---------- */
+
+.desktop-section-contact {
+  width: 100%;
+  max-width: var(--width-contact);
+  margin-inline: auto;
+  min-height: var(--height-desktop-section-contact);
+  padding-top: var(--padding-top-contact);
+  padding-bottom: var(--padding-bottom-contact);
+  background-color: var(--color-black);
+}
+
+.desktop-section-contact .contact-inner {
+  width: min(100%, var(--width-contact-inner));
+  max-width: var(--width-contact-inner);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-contact-inner-stack);
+}
+
+.desktop-section-contact .section-main-title {
+  position: relative;
+  width: var(--width-contact-section-main-title);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* position 변수 미사용 — Figma 메타 `section-deco-title`(CONTACT 타이틀 기준) px */
+.desktop-section-contact .section-deco-title {
+  position: absolute;
+  left: 866px;
+  top: -130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: var(--padding-horizontal-deco-title);
+  padding-right: var(--padding-horizontal-deco-title);
+  padding-top: var(--padding-top-deco-title);
+  padding-bottom: var(--padding-bottom-deco-title);
+  background-color: var(--color-accent-sub);
+  border-radius: var(--radius-small-title-box);
+  transform: rotate(calc(var(--rotate-contact-deco-title) * 1deg));
+}
+
+.desktop-section-contact .section-deco-title-text {
+  font-family: var(--font-family-pp-editorial-new);
+  font-weight: 700;
+  font-size: var(--font-deco-title);
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.desktop-section-contact .contact-main-title {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 900;
+  font-size: var(--font-section-main-title);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.desktop-section-contact .section-text-box {
+  width: 100%;
+  max-width: var(--width-contact-inner);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-section-text-box);
+}
+
+.desktop-section-contact .sub-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.desktop-section-contact .contact-sub-title-en {
+  margin: 0;
+  max-width: var(--width-contact-sub-title);
+  font-family: var(--font-family-pp-editorial-new);
+  font-size: var(--font-text-box-sub-title);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.28;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.desktop-section-contact .sub-text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.desktop-section-contact .contact-sub-text-kr {
+  margin: 0;
+  max-width: var(--width-contact-sub-text);
+  font-family: var(--font-family-pretendard);
+  font-size: var(--font-kr-text);
+  line-height: calc(var(--font-kr-text) + var(--gap-about-edu-text));
+  text-align: center;
+  color: var(--color-white);
+}
+
+.desktop-section-contact .contact-tel {
+  width: 100%;
+  max-width: var(--width-contact-tel-box);
+  min-height: var(--height-contact-tel-box);
+  padding-top: var(--padding-top-tel);
+  padding-bottom: var(--padding-bottom-tel);
+  padding-left: var(--padding-horizontal-tel);
+  padding-right: var(--padding-horizontal-tel);
+  background-color: var(--color-accent-bright);
+  border-radius: var(--radius-teamproject-list-box);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop-section-contact .contact-tel-number {
+  margin: 0;
+  font-family: var(--font-family-pp-editorial-new);
+  font-weight: 700;
+  font-size: var(--font-skill-text);
+  line-height: var(--lineheight-contact-tel);
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--color-black);
+}
+
+.about-info-grid {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.about-info-item {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.about-info-label {
+  font-family: "Pretendard", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-gray);
+  min-width: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-info-value {
+  font-family: "Pretendard", sans-serif;
+  font-size: 18px;
+  color: var(--color-black);
+}
+
+.about-info-link {
+  font-family: var(--font-family-pretendard);
+  font-size: 20px;
+  color: var(--color-accent-main);
+  text-decoration: none;
+}
+
+.about-info-link:hover {
+  text-decoration: underline;
+}
+
+.about-section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.about-career {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 1740px;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.about-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-block-title {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--color-accent-main);
+  border-bottom: 2px solid var(--color-accent-main);
+  padding-bottom: 8px;
+}
+
+.about-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-info-item {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.about-info-label {
+  font-family: var(--font-family-Montserrat);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-gray);
+  min-width: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-info-value {
+  font-family: var(--font-family-pretendard);
+  font-size: 18px;
+  color: var(--color-black);
+}
+
+.about-info-link {
+  font-family: var(--font-family-pretendard);
+  font-size: 18px;
+  color: var(--color-accent-main);
+  text-decoration: none;
+}
+
+.about-info-link:hover {
+  text-decoration: underline;
+}
+
+.about-career-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-career-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.career-company {
+  margin: 0;
+  font-family: var(--font-family-pretendard);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-black);
+}
+
+.career-period {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-size: 14px;
+  color: var(--color-gray);
+  letter-spacing: 0.05em;
+}
+
+.career-desc {
+  margin: 0;
+  font-family: var(--font-family-pretendard);
+  font-size: 16px;
+  color: var(--color-gray);
+  line-height: 1.6;
+}
+
+.about-contact-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.about-profile-img {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.career-period {
+  display: inline-block;
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-size: 12px;
+  color: var(--color-accent-main);
+  border: 1px solid var(--color-accent-main);
+  border-radius: 20px;
+  padding: 2px 12px;
+  letter-spacing: 0.05em;
+}
+
+.career-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.career-period {
+  display: inline-block;
+  width: fit-content;
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-size: 12px;
+  color: var(--color-white);
+  background-color: var(--color-accent-main);
+  border-radius: 20px;
+  padding: 3px 12px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.etc-cert-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.etc-cert-item {
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  color: var(--color-gray);
+}
+
+.etc-cert-item:not(:last-child)::after {
+  content: "·";
+  margin-left: 16px;
+}
+
+.desktop-section-techstack {
+  width: 100%;
+  max-width: var(--width-container);
+  margin-inline: auto;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: var(--color-white);
+}
+
+.techstack-inner {
+  width: min(100%, 1400px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 2px solid var(--color-black);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.techstack-label {
+  flex: 0 0 220px;
+  padding: 32px 40px;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--color-white);
+  background-color: var(--color-accent-main);
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+}
+
+.techstack-value {
+  flex: 1;
+  padding: 32px 40px;
+  font-family: "Pretendard", sans-serif;
+  font-size: 20px;
+  color: var(--color-black);
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+}
+
+.techstack-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skill-inner {
+  width: min(100%, var(--width-section-inner));
+  margin-inline: auto;
+  padding: 40px 90px 80px 90px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.skill-card {
+  border: 2px solid var(--color-black);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skill-card-title {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--color-accent-main);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-accent-main);
+  padding-bottom: 12px;
+}
+
+.skill-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-black);
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 6px 16px;
+}
+
+.skill-section-title {
+  width: min(100%, var(--width-section-inner));
+  margin-inline: auto;
+  padding-top: 80px;
+  padding-left: 90px;
+}
+
+.skill-main-title {
+  margin: 0;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 900;
+  font-size: 100px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-black);
 }
