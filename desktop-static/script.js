@@ -27,7 +27,7 @@ window.addEventListener('scroll', () => {
 // ========== 3. 타이핑 효과 ==========
 const titleEl = document.querySelector('.hero-main-title-text')
 if (titleEl) {
-  const text = 'BACKEND\nDEVELOPER'
+  const text = 'BACKEND\nDEVELOPER\n'
   titleEl.textContent = ''
   let i = 0
   const type = () => {
