@@ -46,24 +46,24 @@
   /* tokens.json font-family "pp-editorial-new" — 웹: Playfair Display 로드 (HTML Google Fonts) */
   --font-family-pp-editorial-new: "Playfair Display", Georgia, serif;
 
-  --font-section-main-title: 200px;
-  --font-text-box-sub-title: 60px;
-  --font-text-box-sub-text: 18px;
-  --font-edu-list-text: 22px;
-  --font-deco-title: 60px;
-  --font-kr-text: 18px;
+  --font-section-main-title: 150px;
+  --font-text-box-sub-title: 45px;
+  --font-text-box-sub-text: 13.5px;
+  --font-edu-list-text: 16.5px;
+  --font-deco-title: 45px;
+  --font-kr-text: 13.5px;
 
-  --padding-top-about: 320px;
-  --padding-bottom-about: 160px;
-  --padding-horizontal-deco-title: 70px;
-  --padding-top-deco-title: 30px;
-  --padding-bottom-deco-title: 20px;
+  --padding-top-about: 240px;
+  --padding-bottom-about: 120px;
+  --padding-horizontal-deco-title: 52.5px;
+  --padding-top-deco-title: 22.5px;
+  --padding-bottom-deco-title: 15px;
 
-  --gap-about-main-text: 72px;
-  --gap-about-bottom-box: 66px;
-  --gap-teamproject-left-box-text-box: 16px;
+  --gap-about-main-text: 54px;
+  --gap-about-bottom-box: 49.5px;
+  --gap-teamproject-left-box-text-box: 12px;
 
-  --radius-small-title-box: 34px;
+  --radius-small-title-box: 25.5px;
 
   --rotate-skill-text-3: -2;
   --rotate-skill-text-1: 0;
@@ -73,138 +73,138 @@
   --rotate-skill-text-6: 0;
   --rotate-skill-text-7: -3;
 
-  --font-skill-text: 100px;
-  --padding-top-skill-text: 40px;
-  --padding-bottom-skill-text: 20px;
-  --padding-horizontal-skill-text: 100px;
-  --padding-vertical-skill: 200px;
-  --lineheight-skill-text: 100px;
-  --radius-skill-text: 80px;
-  --height-skill-frame: 1371px;
+  --font-skill-text: 75px;
+  --padding-top-skill-text: 30px;
+  --padding-bottom-skill-text: 15px;
+  --padding-horizontal-skill-text: 75px;
+  --padding-vertical-skill: 150px;
+  --lineheight-skill-text: 75px;
+  --radius-skill-text: 60px;
+  --height-skill-frame: 1028.25px;
 
   /* Figma Desktop `desktop-section-skill` 메타 — tokens.json에 없는 프레임 치수 */
-  --height-desktop-section-skill: 1840px;
-  --padding-horizontal-skill-text: 60px;
-  --width-skill-text-1: 380px;   /* JAVA */
+  --height-desktop-section-skill: 1380px;
+  --padding-horizontal-skill-text: 45px;
+  --width-skill-text-1: 285px;   /* JAVA */
   
-  --width-skill-text-2: 800px;   /* SPRING BOOT */
-  --width-skill-text-3: 745px;   /* JAVASCRIPT */
-  --width-skill-text-4: 480px;   /* REACT */
-  --width-skill-text-5: 580px;   /* ORACLE */
-  --width-skill-text-6: 920px;   /* DOCKER / AWS */
+  --width-skill-text-2: 600px;   /* SPRING BOOT */
+  --width-skill-text-3: 558.75px;   /* JAVASCRIPT */
+  --width-skill-text-4: 360px;   /* REACT */
+  --width-skill-text-5: 435px;   /* ORACLE */
+  --width-skill-text-6: 690px;   /* DOCKER / AWS */
 
 
   /* Figma Desktop `desktop-section-about` 메타(프레임 치수) — tokens.json 전용 width 토큰 없음 */
-  --height-desktop-section-about: 1269px;
-  --width-about-section-main-title: 432px;
-  --min-height-about-section-main-title: 230px;
-  --width-paper-airplane-frame: 133px;
-  --height-paper-airplane-frame: 100px;
-  --width-about-bottom-bot: 925px;
-  --width-edu-title-area: 198px;
+  --height-desktop-section-about: 951.75px;
+  --width-about-section-main-title: 324px;
+  --min-height-about-section-main-title: 172.5px;
+  --width-paper-airplane-frame: 99.75px;
+  --height-paper-airplane-frame: 75px;
+  --width-about-bottom-bot: 693.75px;
+  --width-edu-title-area: 148.5px;
   /* about-inner: section-main-title(높이 245) → about-main-text(y=341) 간격 */
-  --gap-about-title-to-main-text: 96px;
+  --gap-about-title-to-main-text: 72px;
 
-  --width-container: 1920px;
-  --width-container-inner: 1740px;
-  --width-header: 1740px;
-  --width-header-logo: 226px;
-  --width-section: 1740px;
-  --width-section-inner: 1740px;
-  --width-hero-img: 750px;
-  --width-teamproject-left-box: 547px;
-  --width-teamproject-right-box: 474px;
-  --width-teamproject-list: 1440px;
-  --width-teamproject-title: 1440px;
-  --width-teamproject-img-girl: 781px;
-  --width-teamproject-sun: 196px;
-  --width-small-title-box: 1440px;
-  --width-teamproject-left-box-text-box: 543px;
+  --width-container: 1440px;
+  --width-container-inner: 1305px;
+  --width-header: 1305px;
+  --width-header-logo: 169.5px;
+  --width-section: 1305px;
+  --width-section-inner: 1305px;
+  --width-hero-img: 562.5px;
+  --width-teamproject-left-box: 410.25px;
+  --width-teamproject-right-box: 355.5px;
+  --width-teamproject-list: 1080px;
+  --width-teamproject-title: 1080px;
+  --width-teamproject-img-girl: 585.75px;
+  --width-teamproject-sun: 147px;
+  --width-small-title-box: 1080px;
+  --width-teamproject-left-box-text-box: 407.25px;
 
   /* Figma Desktop 프레임 메타(node 21:15~21:21) — tokens.json에 없는 레이아웃 치수 */
   --width-header-half: calc(var(--width-section-inner) / 2);
-  --width-hero-main-title: 873px;
-  --width-hero-sub-text: 400px;
+  --width-hero-main-title: 654.75px;
+  --width-hero-sub-text: 300px;
   --padding-left-hero-sub-text-inner: 0px;
-  --width-hero-sub-text-inner: 400px;
-  --height-desktop-section-hero-figma: 820px;
-  --min-height-hero-inner-figma: 546px;
+  --width-hero-sub-text-inner: 300px;
+  --height-desktop-section-hero-figma: 615px;
+  --min-height-hero-inner-figma: 409.5px;
 
-  --font-hero-main-tiltle: 158px;
-  --font-big-caption: 18px;
-  --font-en-text: 24px;
-  --font-edu-title: 28px;
+  --font-hero-main-tiltle: 118.5px;
+  --font-big-caption: 13.5px;
+  --font-en-text: 18px;
+  --font-edu-title: 21px;
 
-  --padding-vertical-header: 20px;
-  --padding-top-hero: 48px;
-  --padding-top-hero-main-title: 132px;
+  --padding-vertical-header: 15px;
+  --padding-top-hero: 36px;
+  --padding-top-hero-main-title: 99px;
 
-  --gap-hero-inner: 369px;
-  --gap-small-title-box: 32px;
-  --gap-section-text-box: 8px;
-  --gap-about-edu-text: 10px;
-  --gap-about-inner: 80px;
+  --gap-hero-inner: 276.75px;
+  --gap-small-title-box: 24px;
+  --gap-section-text-box: 6px;
+  --gap-about-edu-text: 7.5px;
+  --gap-about-inner: 60px;
 
-  --padding-top-project: 60px;
+  --padding-top-project: 45px;
   --padding-bottom-project: 0px;
-  --gap-project-inner: 80px;
+  --gap-project-inner: 60px;
 
-  --padding-top-teamproject: 80px;
+  --padding-top-teamproject: 60px;
   --padding-bottom-teamproject: 0px;
-  --padding-vertical-small-title-box: 118px;
-  --padding-vertical-teamproject-list: 57px;
-  --padding-horizontal-teamproject-list: 80px;
+  --padding-vertical-small-title-box: 88.5px;
+  --padding-vertical-teamproject-list: 42.75px;
+  --padding-horizontal-teamproject-list: 60px;
 
-  --gap-teamproject: 80px;
-  --gap-teamproject-box: 84px;
-  --gap-teamproject-left-box: 28px;
-  --gap-small-sub-box: 8px;
+  --gap-teamproject: 60px;
+  --gap-teamproject-box: 63px;
+  --gap-teamproject-left-box: 21px;
+  --gap-small-sub-box: 6px;
 
-  --font-small-main-title: 132px;
-  --font-small-sub-tilte: 30px;
-  --font-small-sub-text: 18px;
-  --font-num-title: 100px;
-  --font-project-name: 40px;
-  --font-small-caption: 16px;
+  --font-small-main-title: 99px;
+  --font-small-sub-tilte: 22.5px;
+  --font-small-sub-text: 13.5px;
+  --font-num-title: 75px;
+  --font-project-name: 30px;
+  --font-small-caption: 12px;
 
-  --radius-teamproject-list-box: 30px;
+  --radius-teamproject-list-box: 22.5px;
 
   /* Figma `teamproject-img` 프레임 — tokens에 높이 없음 */
-  --height-teamproject-illustration: 927px;
-  --height-teamproject-img-girl: 775px;
-  --height-teamproject-sun: 194px;
-  --height-teamproject-list-mockup: 367px;
+  --height-teamproject-illustration: 695.25px;
+  --height-teamproject-img-girl: 581.25px;
+  --height-teamproject-sun: 145.5px;
+  --height-teamproject-list-mockup: 275.25px;
 
-  --width-contact: 1920px;
-  --width-contact-inner: 1740px;
-  --padding-top-contact: 140px;
-  --padding-bottom-contact: 140px;
-  --padding-horizontal-tel: 100px;
-  --padding-top-tel: 40px;
-  --padding-bottom-tel: 20px;
-  --lineheight-contact-tel: 100px;
+  --width-contact: 1440px;
+  --width-contact-inner: 1305px;
+  --padding-top-contact: 105px;
+  --padding-bottom-contact: 105px;
+  --padding-horizontal-tel: 75px;
+  --padding-top-tel: 30px;
+  --padding-bottom-tel: 15px;
+  --lineheight-contact-tel: 75px;
 
   /* Figma `desktop-section-contact` — 토큰에 없는 치수 */
-  --height-desktop-section-contact: 1056px;
-  --width-contact-section-main-title: 1157px;
-  --width-contact-sub-title: 883px;
-  --width-contact-sub-text: 495px;
-  --width-contact-tel-box: 771px;
-  --height-contact-tel-box: 160px;
-  --gap-contact-inner-stack: 80px;
+  --height-desktop-section-contact: 792px;
+  --width-contact-section-main-title: 867.75px;
+  --width-contact-sub-title: 662.25px;
+  --width-contact-sub-text: 371.25px;
+  --width-contact-tel-box: 578.25px;
+  --height-contact-tel-box: 120px;
+  --gap-contact-inner-stack: 60px;
   --rotate-contact-deco-title: 15;
 
-  --height-section-hero: 1188px;
-  --height-hero-img: 700px;
+  --height-section-hero: 891px;
+  --height-hero-img: 525px;
 
   /* Figma Desktop `desktop-section-project` — tokens에 없는 치수·간격 */
-  --height-desktop-section-project: 402px;
-  --width-project-section-main-title: 1157px;
-  --min-height-project-section-main-title: 245px;
-  --width-project-sub-title: 1070px;
-  --width-project-sub-text: 400px;
+  --height-desktop-section-project: 301.5px;
+  --width-project-section-main-title: 867.75px;
+  --min-height-project-section-main-title: 183.75px;
+  --width-project-sub-title: 802.5px;
+  --width-project-sub-text: 300px;
   /* project-inner: section-main-title(높이 245) → section-text-box(y=341) 간격 */
-  --gap-project-title-to-textbox: 96px;
+  --gap-project-title-to-textbox: 72px;
   /* STUDENT 배지 기울기 — Figma 시각 기준(토큰에 rotate 없음) */
   --rotate-project-deco-title: -10;
 }
@@ -266,7 +266,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right: 300px;
+  margin-right: 225px;
   gap: var(--gap-about-inner);
 }
 
@@ -349,8 +349,8 @@ body {
 /* position 토큰 변수 미사용 — Figma hero-img 프레임 기준 픽셀 직접 입력 */
 .desktop-section-hero .hero-img {
   position: absolute;
-  left: 1050px;
-  top: 120px;
+  left: 787.5px;
+  top: 90px;
   width: var(--width-hero-img);
   height: var(--height-hero-img);
 }
@@ -370,7 +370,7 @@ body {
   margin-inline: auto;
   min-height: var(--height-desktop-section-about);
   padding-top: var(--padding-top-about);
-  padding-bottom: 80px;
+  padding-bottom: 60px;
   background-color: var(--color-white);
 }
 
@@ -398,8 +398,8 @@ body {
 /* position 변수 미사용 — Figma 메타(section-deco-title) 기준 px */
 .desktop-section-about .section-deco-title {
   position: absolute;
-  left: -109px;
-  top: -64px;
+  left: -81.75px;
+  top: -48px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -437,8 +437,8 @@ body {
 /* position 변수 미사용 — Figma 메타(paper-airplane 1 프레임) 기준 px */
 .desktop-section-about .paper-airplane-1 {
   position: absolute;
-  left: 365px;
-  top: 195px;
+  left: 273.75px;
+  top: 146.25px;
   width: var(--width-paper-airplane-frame);
   height: var(--height-paper-airplane-frame);
 }
@@ -558,7 +558,7 @@ body {
 
 .desktop-section-about .check-icon img {
   display: block;
-  width: 14px;
+  width: 10.5px;
   height: auto;
 }
 
@@ -578,7 +578,7 @@ body {
   max-width: var(--width-container);
   margin-inline: auto;
   background-color: var(--color-white);
-  padding-bottom: 250px;
+  padding-bottom: 187.5px;
 }
 
 .desktop-section-skill .frame-1 {
@@ -593,47 +593,47 @@ body {
 
 .desktop-section-skill .skill-icon1 {
   position: absolute;
-  left: 310px;
-  top: 205px;
+  left: 232.5px;
+  top: 153.75px;
   z-index: 1;
-  width: 125px;
-  height: 124px;
+  width: 93.75px;
+  height: 93px;
 }
 
 .desktop-section-skill .skill-icon2 {
   position: absolute;
-  left: 140px;
-  top: 175px;
+  left: 105px;
+  top: 131.25px;
   z-index: 1;
-  width: 143px;
-  height: 129px;
+  width: 107.25px;
+  height: 96.75px;
 }
 
 .desktop-section-skill .skill-icon3 {
   position: absolute;
-  left: 210px;
-  top: 576px;
+  left: 157.5px;
+  top: 432px;
   z-index: 1;
-  width: 144px;
-  height: 138px;
+  width: 108px;
+  height: 103.5px;
 }
 
 .desktop-section-skill .skill-icon4 {
   position: absolute;
-  left: 135px;
-  top: 711px;
+  left: 101.25px;
+  top: 533.25px;
   z-index: 1;
-  width: 229px;
-  height: 196px;
+  width: 171.75px;
+  height: 147px;
 }
 
 .desktop-section-skill .skill-icon5 {
   position: absolute;
-  left: 277px;
-  top: 1112px;
+  left: 207.75px;
+  top: 834px;
   z-index: 1;
-  width: 101px;
-  height: 130px;
+  width: 75.75px;
+  height: 97.5px;
 }
 
 .desktop-section-skill .skill-icon1-img,
@@ -661,7 +661,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--color-white);
-  border: 1px solid var(--color-black);
+  border: 0.75px solid var(--color-black);
   border-radius: var(--radius-skill-text);
   padding-top: var(--padding-top-skill-text);
   padding-bottom: var(--padding-bottom-skill-text);
@@ -683,43 +683,43 @@ body {
 }
 
 .desktop-section-skill .skill-text-1 {
-  left: 666px;
-  top: 51px;
+  left: 499.5px;
+  top: 38.25px;
   width: var(--width-skill-text-1);
   transform: rotate(calc(var(--rotate-skill-text-1) * 1deg));
 }
 
 .desktop-section-skill .skill-text-2 {
-  left: 516px;
-  top: 160px;
+  left: 387px;
+  top: 120px;
   width: var(--width-skill-text-2);
   transform: rotate(calc(var(--rotate-skill-text-2) * 1deg));
 }
 
 .desktop-section-skill .skill-text-3 {
-  left: 566px;
-  top: 406px;
+  left: 424.5px;
+  top: 304.5px;
   width: var(--width-skill-text-3);
   transform: rotate(calc(var(--rotate-skill-text-3) * 1deg));
 }
 
 .desktop-section-skill .skill-text-4 {
-  left: 617px;
-  top: 561px;
+  left: 462.75px;
+  top: 420.75px;
   width: var(--width-skill-text-4);
   transform: rotate(calc(var(--rotate-skill-text-4) * 1deg));
 }
 
 .desktop-section-skill .skill-text-5 {
-  left: 471px;
-  top: 720px;
+  left: 353.25px;
+  top: 540px;
   width: var(--width-skill-text-5);
   transform: rotate(calc(var(--rotate-skill-text-5) * 1deg));
 }
 
 .desktop-section-skill .skill-text-6 {
-  left: 366px;
-  top: 860px;
+  left: 274.5px;
+  top: 645px;
   width: var(--width-skill-text-6);
   transform: rotate(calc(var(--rotate-skill-text-6) * 1deg));
 }
@@ -761,8 +761,8 @@ body {
 /* position 변수 미사용 — tokens.json `position-project-deco-title` 값과 동일 px */
 .desktop-section-project .section-deco-title {
   position: absolute;
-  left: -90px;
-  top: -141px;
+  left: -67.5px;
+  top: -105.75px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -874,8 +874,8 @@ body {
 /* position 변수 미사용 — Figma 메타 `teamproject-img-girl` 기준 px */
 .desktop-section-teamproject .teamproject-img-girl {
   position: absolute;
-  left: 480px;
-  top: 76px;
+  left: 360px;
+  top: 57px;
   width: var(--width-teamproject-img-girl);
   height: var(--height-teamproject-img-girl);
   object-fit: contain;
@@ -884,7 +884,7 @@ body {
 /* position 변수 미사용 — Figma 메타 `team-img-sun` 기준 px */
 .desktop-section-teamproject .team-img-sun {
   position: absolute;
-  left: 1108px;
+  left: 831px;
   top: 0;
   width: var(--width-teamproject-sun);
   height: var(--height-teamproject-sun);
@@ -973,7 +973,7 @@ body {
   padding-left: var(--padding-horizontal-teamproject-list);
   padding-right: var(--padding-horizontal-teamproject-list);
   background-color: var(--color-white);
-  border: 1px solid var(--color-black);
+  border: 0.75px solid var(--color-black);
   border-radius: var(--radius-teamproject-list-box);
   display: flex;
   flex-direction: row;
@@ -1122,8 +1122,8 @@ body {
 /* position 변수 미사용 — Figma 메타 `section-deco-title`(CONTACT 타이틀 기준) px */
 .desktop-section-contact .section-deco-title {
   position: absolute;
-  left: 866px;
-  top: -130px;
+  left: 649.5px;
+  top: -97.5px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1233,39 +1233,39 @@ body {
 
 .about-info-grid {
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   text-align: left;
 }
 
 .about-info-item {
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 18px;
   align-items: baseline;
 }
 
 .about-info-label {
   font-family: "Pretendard", sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 10.5px;
   color: var(--color-gray);
-  min-width: 60px;
+  min-width: 45px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .about-info-value {
   font-family: "Pretendard", sans-serif;
-  font-size: 18px;
+  font-size: 13.5px;
   color: var(--color-black);
 }
 
 .about-info-link {
   font-family: var(--font-family-pretendard);
-  font-size: 20px;
+  font-size: 15px;
   color: var(--color-accent-main);
   text-decoration: none;
 }
@@ -1277,25 +1277,25 @@ body {
 .about-section-block {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 9px;
   width: 100%;
-  max-width: 900px;
+  max-width: 675px;
 }
 
 .about-career {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 9px;
   width: 100%;
-  max-width: 900px;
+  max-width: 675px;
 }
 
 .about-content {
   width: 100%;
-  max-width: 1740px;
+  max-width: 1305px;
   display: flex;
   flex-direction: row;
-  gap: 80px;
+  gap: 60px;
   align-items: flex-start;
 }
 
@@ -1303,65 +1303,65 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 45px;
 }
 
 .about-right {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 45px;
 }
 
 .about-info-block {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .about-block-title {
   margin: 0;
   font-family: var(--font-family-Montserrat);
   font-weight: 800;
-  font-size: 14px;
+  font-size: 10.5px;
   letter-spacing: 0.15em;
   color: var(--color-accent-main);
-  border-bottom: 2px solid var(--color-accent-main);
-  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--color-accent-main);
+  padding-bottom: 6px;
 }
 
 .about-info-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 9px;
 }
 
 .about-info-item {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 12px;
   align-items: baseline;
 }
 
 .about-info-label {
   font-family: var(--font-family-Montserrat);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 10.5px;
   color: var(--color-gray);
-  min-width: 60px;
+  min-width: 45px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .about-info-value {
   font-family: var(--font-family-pretendard);
-  font-size: 18px;
+  font-size: 13.5px;
   color: var(--color-black);
 }
 
 .about-info-link {
   font-family: var(--font-family-pretendard);
-  font-size: 18px;
+  font-size: 13.5px;
   color: var(--color-accent-main);
   text-decoration: none;
 }
@@ -1373,27 +1373,27 @@ body {
 .about-career-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 }
 
 .about-career-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .career-company {
   margin: 0;
   font-family: var(--font-family-pretendard);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--color-black);
 }
 
 .career-period {
   margin: 0;
   font-family: var(--font-family-Montserrat);
-  font-size: 14px;
+  font-size: 10.5px;
   color: var(--color-gray);
   letter-spacing: 0.05em;
 }
@@ -1401,7 +1401,7 @@ body {
 .career-desc {
   margin: 0;
   font-family: var(--font-family-pretendard);
-  font-size: 16px;
+  font-size: 12px;
   color: var(--color-gray);
   line-height: 1.6;
 }
@@ -1409,15 +1409,15 @@ body {
 .about-contact-wrap {
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 24px;
   align-items: flex-start;
 }
 
 .about-profile-img {
-  width: 160px;
-  height: 200px;
+  width: 120px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 6px;
   flex-shrink: 0;
 }
 
@@ -1425,18 +1425,18 @@ body {
   display: inline-block;
   margin: 0;
   font-family: var(--font-family-Montserrat);
-  font-size: 12px;
+  font-size: 9px;
   color: var(--color-accent-main);
-  border: 1px solid var(--color-accent-main);
-  border-radius: 20px;
-  padding: 2px 12px;
+  border: 0.75px solid var(--color-accent-main);
+  border-radius: 15px;
+  padding: 1.5px 9px;
   letter-spacing: 0.05em;
 }
 
 .career-title-row {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4.5px;
 }
 
 .career-period {
@@ -1444,11 +1444,11 @@ body {
   width: fit-content;
   margin: 0;
   font-family: var(--font-family-Montserrat);
-  font-size: 12px;
+  font-size: 9px;
   color: var(--color-white);
   background-color: var(--color-accent-main);
-  border-radius: 20px;
-  padding: 3px 12px;
+  border-radius: 15px;
+  padding: 2.25px 9px;
   white-space: nowrap;
   font-weight: 600;
 }
@@ -1457,46 +1457,46 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: 6px 12px;
 }
 
 .etc-cert-item {
   font-family: "Pretendard", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   color: var(--color-gray);
 }
 
 .etc-cert-item:not(:last-child)::after {
   content: "·";
-  margin-left: 16px;
+  margin-left: 12px;
 }
 
 .desktop-section-techstack {
   width: 100%;
   max-width: var(--width-container);
   margin-inline: auto;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 90px;
+  padding-bottom: 90px;
   background-color: var(--color-white);
 }
 
 .techstack-inner {
-  width: min(100%, 1400px);
+  width: min(100%, 1050px);
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 0;
-  border: 2px solid var(--color-black);
-  border-radius: 20px;
+  border: 1.5px solid var(--color-black);
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .techstack-label {
-  flex: 0 0 220px;
-  padding: 32px 40px;
+  flex: 0 0 165px;
+  padding: 24px 30px;
   font-family: var(--font-family-Montserrat);
   font-weight: 800;
-  font-size: 18px;
+  font-size: 13.5px;
   color: var(--color-white);
   background-color: var(--color-accent-main);
   display: flex;
@@ -1506,9 +1506,9 @@ body {
 
 .techstack-value {
   flex: 1;
-  padding: 32px 40px;
+  padding: 24px 30px;
   font-family: "Pretendard", sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--color-black);
   line-height: 1.7;
   display: flex;
@@ -1519,68 +1519,83 @@ body {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 0.75px solid #e0e0e0;
 }
 
 .skill-inner {
   width: min(100%, var(--width-section-inner));
   margin-inline: auto;
-  padding: 40px 90px 80px 90px;
+  padding: 30px 67.5px 60px 67.5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
 .skill-card {
-  border: 2px solid var(--color-black);
-  border-radius: 20px;
-  padding: 40px;
+  border: 1.5px solid var(--color-black);
+  border-radius: 15px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 }
 
 .skill-card-title {
   margin: 0;
   font-family: var(--font-family-Montserrat);
   font-weight: 800;
-  font-size: 20px;
+  font-size: 15px;
   color: var(--color-accent-main);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--color-accent-main);
-  padding-bottom: 12px;
+  border-bottom: 1.5px solid var(--color-accent-main);
+  padding-bottom: 9px;
 }
 
 .skill-tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .skill-tag {
   font-family: "Pretendard", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--color-black);
   background-color: #f5f5f5;
-  border-radius: 20px;
-  padding: 6px 16px;
+  border-radius: 15px;
+  padding: 4.5px 12px;
 }
 
 .skill-section-title {
+  position: relative;
   width: min(100%, var(--width-section-inner));
   margin-inline: auto;
-  padding-top: 80px;
-  padding-left: 90px;
+  padding-top: 60px;
+  /* 비행기(99.75px) + 여백 뒤에 SKILLS 텍스트가 오도록 */
+  padding-left: calc(67.5px + var(--width-paper-airplane-frame) + 24px);
+  padding-right: 67.5px;
 }
 
 .skill-main-title {
   margin: 0;
   font-family: var(--font-family-Montserrat);
   font-weight: 900;
-  font-size: 100px;
+  font-size: 75px;
   line-height: 0.95;
   letter-spacing: -0.03em;
   color: var(--color-black);
+}
+
+/* About `paper-airplane-1`과 동일 에셋 — SKILLS 왼쪽, 좌우 반전 */
+.skill-section-title .paper-airplane {
+  position: absolute;
+  top: calc(50% + 24px);
+  left: 67.5px;
+  width: var(--width-paper-airplane-frame);
+  height: var(--height-paper-airplane-frame);
+  object-fit: contain;
+  transform: translateY(-32%) scaleX(-1);
+  pointer-events: none;
 }
