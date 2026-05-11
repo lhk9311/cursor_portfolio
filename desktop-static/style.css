@@ -1599,3 +1599,14 @@ body {
   transform: translateY(-32%) scaleX(-1);
   pointer-events: none;
 }
+
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
