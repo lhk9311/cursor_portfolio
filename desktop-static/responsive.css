@@ -1,0 +1,401 @@
+/* ============================================================
+   responsive.css
+   ============================================================ */
+
+/* ── 프로젝트 카드 추가 스타일 ─────────────────────────── */
+
+a.teamproject-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+a.teamproject-link:hover {
+  box-shadow: 0 8px 32px rgba(33, 160, 170, 0.18);
+  transform: translateY(-3px);
+}
+
+.teamproject-list--personal {
+  border-color: var(--color-accent-main);
+}
+
+.project-links-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-badge {
+  display: inline-block;
+  font-family: var(--font-family-Montserrat);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-radius: 20px;
+  padding: 4px 14px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.project-badge:hover {
+  background-color: var(--color-accent-main);
+}
+
+.project-badge--blog {
+  background-color: var(--color-accent-sub);
+}
+
+.project-badge--blog:hover {
+  background-color: #c0392b;
+}
+
+.project-badge-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── Contact 링크 버튼 ──────────────────────────────────── */
+
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.contact-link-btn {
+  font-family: var(--font-family-pretendard);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-white);
+  text-decoration: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 30px;
+  padding: 10px 24px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-link-btn:hover {
+  background-color: var(--color-accent-main);
+  border-color: var(--color-accent-main);
+}
+
+/* ── 맨 위로 버튼 ───────────────────────────────────────── */
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-accent-main);
+  color: var(--color-white);
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--color-black);
+  transform: translateY(-3px);
+}
+
+/* ── 전역 ───────────────────────────────────────────────── */
+
+body {
+  overflow-x: hidden;
+}
+
+.desktop-section-hero {
+  overflow: hidden;
+}
+
+.desktop-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================================
+   1200px 이하
+   ============================================================ */
+@media (max-width: 1200px) {
+  .desktop-section-hero .hero-img {
+    width: min(440px, 38vw);
+    height: auto;
+  }
+
+  .desktop-section-skill .skill-text-2 { width: 480px; }
+  .desktop-section-skill .skill-text-3 { width: 440px; }
+  .desktop-section-skill .skill-text-6 { width: 540px; }
+}
+
+/* ============================================================
+   960px 이하
+   ============================================================ */
+@media (max-width: 960px) {
+  :root {
+    --font-hero-main-tiltle: 68px;
+    --font-section-main-title: 80px;
+    --font-small-main-title: 56px;
+    --padding-top-about: 80px;
+    --padding-top-teamproject: 40px;
+    --gap-teamproject: 40px;
+    --gap-teamproject-box: 32px;
+  }
+
+  .desktop-header .desktop-header-inner {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .desktop-header .logo {
+    flex: none;
+    width: 100%;
+  }
+
+  .desktop-header .gnb {
+    margin-right: 0;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .desktop-header .gnb::-webkit-scrollbar { display: none; }
+
+  .desktop-header .gnb-link {
+    font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .desktop-section-hero {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .desktop-section-hero .hero-inner {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 48px;
+    width: min(100%, 700px);
+  }
+
+  .desktop-section-hero .hero-main-title {
+    flex: none;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .desktop-section-hero .hero-img { display: none; }
+
+  .hero-btn-group {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-left,
+  .about-right { width: 100%; }
+
+  .desktop-section-about .about-me-title { font-size: 80px; }
+
+  .skill-inner {
+    grid-template-columns: 1fr;
+    padding: 20px 24px 40px;
+  }
+
+  .teamproject-list {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .desktop-section-teamproject .left-box { max-width: 100%; }
+
+  .desktop-section-teamproject .teamproject-list-mockup-wrap {
+    width: 100%;
+    flex: none;
+    height: 200px;
+  }
+
+  .desktop-section-teamproject .teamproject-img { display: none; }
+  .desktop-section-teamproject .small-main-title-text { font-size: 48px; }
+
+  .desktop-section-contact .section-main-title {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .desktop-section-contact .section-deco-title { display: none; }
+  .desktop-section-contact .contact-main-title { font-size: 42px; }
+  .desktop-section-contact .contact-sub-title-en { font-size: 22px; }
+
+  .desktop-section-contact .contact-tel {
+    min-width: auto;
+    width: 100%;
+    padding: 18px 32px;
+  }
+
+  .desktop-section-contact .contact-tel-number { font-size: 28px; }
+}
+
+/* ============================================================
+   640px 이하
+   ============================================================ */
+@media (max-width: 640px) {
+  :root {
+    --font-hero-main-tiltle: 52px;
+    --font-section-main-title: 60px;
+    --font-small-main-title: 42px;
+    --padding-top-about: 60px;
+    --gap-about-inner: 32px;
+  }
+
+  .desktop-header .desktop-header-inner {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .desktop-header .logo {
+    flex: none;
+    width: 100%;
+  }
+
+  .desktop-header .gnb {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .desktop-header .gnb::-webkit-scrollbar { display: none; }
+  .desktop-header .gnb-link {
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .desktop-section-hero .hero-main-title-text { font-size: 52px; }
+  .desktop-section-hero .hero-sub-text-body {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .hero-btn,
+  .hero-btn-outline {
+    font-size: 14px;
+    padding: 12px 20px;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .hero-btn-group {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .desktop-section-about .about-me-title { font-size: 60px; }
+  .desktop-section-about .section-deco-title { display: none; }
+
+  .about-contact-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-profile-img {
+    width: 90px;
+    height: 112px;
+  }
+
+  .skill-main-title { font-size: 52px; }
+  .skill-section-title .paper-airplane { display: none; }
+
+  .skill-inner {
+    padding: 16px 16px 32px;
+    gap: 16px;
+  }
+
+  .desktop-section-project .project-main-title { font-size: 60px; }
+  .desktop-section-project .section-deco-title { display: none; }
+  .desktop-section-project .project-sub-title-en { font-size: 18px; }
+
+  .desktop-section-teamproject .small-main-title-text { font-size: 34px; }
+  .desktop-section-teamproject .small-sub-title-text { font-size: 14px; }
+  .desktop-section-teamproject .num-title-text { font-size: 48px; }
+  .desktop-section-teamproject .title-text { font-size: 22px; }
+  .desktop-section-teamproject .teamproject-list-mockup-wrap { height: 160px; }
+
+  .teamproject-list { padding: 24px; }
+
+  .desktop-section-teamproject .teamproject-box { width: min(100%, 95%); }
+
+  .desktop-section-teamproject .small-title-box {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .desktop-section-contact .contact-main-title { font-size: 36px; }
+  .desktop-section-contact .contact-tel-number { font-size: 22px; }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-link-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   400px 이하
+   ============================================================ */
+@media (max-width: 400px) {
+  .desktop-section-about .about-me-title { font-size: 48px; }
+  .desktop-section-project .project-main-title { font-size: 48px; }
+  .desktop-section-teamproject .small-main-title-text { font-size: 28px; }
+  .desktop-section-contact .contact-main-title { font-size: 30px; }
+  .desktop-section-contact .contact-tel-number { font-size: 18px; }
+}

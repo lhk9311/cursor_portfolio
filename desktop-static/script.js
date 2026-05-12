@@ -11,14 +11,11 @@ document.querySelectorAll('section').forEach(section => {
   observer.observe(section)
 })
 
-// ========== 2. 헤더 스크롤 고정 ==========
+// ========== 2. 헤더 스크롤 그림자 ==========
 const header = document.querySelector('.desktop-header')
 window.addEventListener('scroll', () => {
   if (window.scrollY > 10) {
     header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)'
-    header.style.position = 'sticky'
-    header.style.top = '0'
-    header.style.zIndex = '100'
   } else {
     header.style.boxShadow = 'none'
   }
@@ -140,7 +137,6 @@ document.addEventListener('mousemove', e => {
   cursorDot.style.top = e.clientY + 'px'
 })
 
-// 링크/버튼 호버 시 커서 커짐
 document.querySelectorAll('a, button, .skill-card, .teamproject-list').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cursor.style.transform = 'translate(-50%, -50%) scale(1.6)'
@@ -150,4 +146,22 @@ document.querySelectorAll('a, button, .skill-card, .teamproject-list').forEach(e
     cursor.style.transform = 'translate(-50%, -50%) scale(1)'
     cursor.style.backgroundColor = 'transparent'
   })
+})
+
+// ========== 8. 맨 위로 버튼 ==========
+const scrollTopBtn = document.createElement('button')
+scrollTopBtn.innerHTML = '↑'
+scrollTopBtn.className = 'scroll-top-btn'
+document.body.appendChild(scrollTopBtn)
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.classList.add('visible')
+  } else {
+    scrollTopBtn.classList.remove('visible')
+  }
+})
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 })

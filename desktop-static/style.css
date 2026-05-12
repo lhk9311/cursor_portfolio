@@ -53,7 +53,7 @@
   --font-deco-title: 45px;
   --font-kr-text: 13.5px;
 
-  --padding-top-about: 240px;
+  --padding-top-about: 200px;
   --padding-bottom-about: 120px;
   --padding-horizontal-deco-title: 52.5px;
   --padding-top-deco-title: 22.5px;
@@ -244,7 +244,7 @@ body {
 }
 
 .desktop-header .logo {
-  flex: 0 0 var(--width-header-half);
+  flex: 0 0 auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -266,7 +266,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right: 225px;
+  margin-right: 0;
   gap: var(--gap-about-inner);
 }
 
@@ -287,22 +287,23 @@ body {
 
 /* ---------- desktop-section-hero ---------- */
 
+/* 교체 */
 .desktop-section-hero {
   position: relative;
   width: 100%;
   max-width: var(--width-container);
   margin-inline: auto;
-  min-height: var(--height-desktop-section-hero-figma);
   background-color: var(--color-white);
   overflow: hidden;
 }
 
+/* hero-inner — flex 방향 유지하되 텍스트 영역 max-width 조정 */
 .desktop-section-hero .hero-inner {
   width: min(100%, var(--width-section-inner));
   max-width: var(--width-section);
   margin-inline: auto;
   padding-top: var(--padding-top-hero);
-  min-height: var(--min-height-hero-inner-figma);
+  padding-bottom: 80px;       /* 이미지 높이 여유 */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -311,14 +312,17 @@ body {
 }
 
 
+/* 수정 */
 .desktop-section-hero .hero-main-title {
-  flex: 0 0 var(--width-hero-main-title);
-  width: var(--width-hero-main-title);
+  flex: 1 1 auto;        /* 고정값 제거 */
+  max-width: 654.75px;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-top: var(--padding-top-hero-main-title);
 }
+
 .desktop-section-hero .hero-main-title-text {
   margin: 0;
   font-family: var(--font-family-Montserrat);
@@ -351,18 +355,20 @@ body {
 }
 
 /* position 토큰 변수 미사용 — Figma hero-img 프레임 기준 픽셀 직접 입력 */
+
+/* hero-img — right 기준으로 위치, 텍스트 영역과 안 겹치게 */
 .desktop-section-hero .hero-img {
   position: absolute;
-  left: 787.5px;
-  top: 90px;
-  width: var(--width-hero-img);
-  height: var(--height-hero-img);
+  right: max(0px, calc((100vw - 1305px) / 2));
+  top: 0px;
+  width: min(562.5px, 38vw);
+  height: auto;
 }
 
 .desktop-section-hero .hero-img-vector {
   display: block;
-  width: var(--width-hero-img);
-  height: var(--height-hero-img);
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -582,7 +588,7 @@ body {
   max-width: var(--width-container);
   margin-inline: auto;
   background-color: var(--color-white);
-  padding-bottom: 187.5px;
+  padding-bottom: 100px;
 }
 
 .desktop-section-skill .frame-1 {
@@ -741,6 +747,7 @@ body {
   background-color: var(--color-white);
 }
 
+/* ① project-inner — padding-top 늘려서 배지 공간 확보 */
 .desktop-section-project .project-inner {
   width: min(100%, var(--width-section-inner));
   max-width: var(--width-section);
@@ -749,12 +756,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: var(--gap-project-title-to-textbox);
+  padding-top: 120px;   /* ← 배지(-105.75px) 튀어나올 공간 */
 }
 
+/* 수정 */
 .desktop-section-project .section-main-title {
   position: relative;
-  width: var(--width-project-section-main-title);
-  min-height: var(--min-height-project-section-main-title);
+  width: 100%;           /* 고정 width 제거 */
+  max-width: 900px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -1095,11 +1104,10 @@ body {
 
 .desktop-section-contact {
   width: 100%;
-  max-width: var(--width-contact);
   margin-inline: auto;
-  min-height: var(--height-desktop-section-contact);
-  padding-top: var(--padding-top-contact);
-  padding-bottom: var(--padding-bottom-contact);
+  min-height: 0;              /* 고정 높이 제거 */
+  padding-top: 60px;          /* 105px → 60px */
+  padding-bottom: 60px;       /* 105px → 60px */
   background-color: var(--color-black);
 }
 
@@ -1110,17 +1118,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gap-contact-inner-stack);
+  gap: 32px;                  /* 60px → 32px */
 }
 
 .desktop-section-contact .section-main-title {
   position: relative;
-  width: var(--width-contact-section-main-title);
+  width: 100%;           /* 고정 width 제거 */
+  max-width: 900px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  overflow: visible;
 }
 
 /* position 변수 미사용 — Figma 메타 `section-deco-title`(CONTACT 타이틀 기준) px */
@@ -1155,7 +1165,7 @@ body {
   margin: 0;
   font-family: var(--font-family-Montserrat);
   font-weight: 900;
-  font-size: var(--font-section-main-title);
+  font-size: 56px;
   line-height: 0.95;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -1228,8 +1238,8 @@ body {
   margin: 0;
   font-family: var(--font-family-pp-editorial-new);
   font-weight: 700;
-  font-size: var(--font-skill-text);
-  line-height: var(--lineheight-contact-tel);
+  font-size: 36px;   /* 75px → 36px */
+  line-height: 1.2;
   letter-spacing: 0.04em;
   text-align: center;
   color: var(--color-black);
@@ -1480,7 +1490,7 @@ body {
   max-width: var(--width-container);
   margin-inline: auto;
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 60px;
   background-color: var(--color-white);
 }
 
@@ -1697,4 +1707,77 @@ section.visible {
   align-items: center;
   gap: 16px;
   margin-top: 32px;
+}
+
+.desktop-section-contact {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.desktop-section-contact .contact-inner {
+  gap: 20px;
+}
+
+.desktop-section-contact .contact-tel {
+  width: fit-content;
+  min-width: 580px;
+  min-height: 96px;
+  padding: 20px 56px;
+  border-radius: 22px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-inline: auto;
+}
+
+.desktop-section-contact .contact-tel-number {
+  font-size: 40px;
+}
+
+.desktop-section-contact .contact-sub-title-en {
+  font-size: 28px;
+}
+
+.desktop-section-contact .section-deco-title {
+  top: -60px;
+  left: 520px;
+  transform: rotate(10deg) scale(0.8);
+}
+
+.desktop-section-contact .contact-tel-number {
+  font-size: 40px;
+  line-height: 1;
+  text-align: center;
+}
+
+.scroll-top-btn {
+  position: fixed !important;
+  bottom: 40px !important;
+  right: 40px !important;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-accent-main);
+  color: var(--color-white);
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--color-black);
+  transform: translateY(-3px);
 }
