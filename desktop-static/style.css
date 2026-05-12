@@ -359,7 +359,9 @@ body {
 /* hero-img — right 기준으로 위치, 텍스트 영역과 안 겹치게 */
 .desktop-section-hero .hero-img {
   position: absolute;
-  right: max(0px, calc((100vw - 1305px) / 2));
+  right: max(0px, calc((100vw - 1305px) / 2));  /* 기존 유지 */
+  /* 아래 값을 음수로 줄수록 더 오른쪽으로 */
+  right: 0px;  /* 원하는 만큼 조절 */
   top: 0px;
   width: min(562.5px, 38vw);
   height: auto;
@@ -1313,18 +1315,21 @@ body {
   align-items: flex-start;
 }
 
+/* 수정 */
 .about-left {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 65px;
+  justify-content: space-between;  /* ← 이거 추가 */
 }
 
 .about-right {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 45px;
+  gap: 30px;          /* 45px → 30px */
+  align-self: flex-start;
 }
 
 .about-info-block {
@@ -1347,7 +1352,7 @@ body {
 .about-info-list {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
 }
 
 .about-info-item {
@@ -1679,11 +1684,29 @@ section.visible {
   border-color: var(--color-accent-main);
 }
 
+/* hero-btn margin-top 제거 */
+.hero-btn {
+  display: inline-block;
+  margin-top: 0;          /* 32px → 0 */
+  padding: 16px 40px;
+  background-color: var(--color-accent-main);
+  color: var(--color-white);
+  font-family: var(--font-family-pretendard);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;    /* ← 줄바꿈 방지 추가 */
+}
+
+/* hero-btn-outline margin 제거 */
 .hero-btn-outline {
   display: inline-block;
-  margin-top: 32px;
-  margin-left: 16px;
-  padding: 16px 28px;
+  margin-top: 0;          /* 32px → 0 */
+  margin-left: 0;         /* 16px → 0 (gap으로 대체) */
+  padding: 16px 40px;
+  white-space: nowrap;
   background-color: transparent;
   color: var(--color-black);
   font-family: var(--font-family-pretendard);
@@ -1781,3 +1804,4 @@ section.visible {
   background-color: var(--color-black);
   transform: translateY(-3px);
 }
+
