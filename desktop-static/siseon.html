@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAN.KYOUNG'S PORTFOLIO — SISEON =</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ===== 상세 페이지 전용 스타일 ===== */
+
+      body {
+        background-color: #fff;
+      }
+
+      .detail-hero {
+        width: 100%;
+        background-color: var(--color-black);
+        padding: 120px 0 80px 0;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .detail-hero-inner {
+        width: min(100%, 1050px);
+        margin-inline: auto;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .detail-back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-family-Montserrat);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-accent-main);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: gap 0.2s ease;
+        width: fit-content;
+      }
+
+      .detail-back-btn:hover {
+        gap: 14px;
+      }
+
+      .detail-hero-num {
+        font-family: var(--font-family-Montserrat);
+        font-weight: 900;
+        font-size: 13.5px;
+        color: var(--color-accent-main);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .detail-hero-title {
+        margin: 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 900;
+        font-size: 90px;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        color: var(--color-white);
+        text-transform: uppercase;
+      }
+
+      .detail-hero-caption {
+        margin: 0;
+        font-family: var(--font-family-pp-editorial-new);
+        font-size: 22px;
+        font-style: italic;
+        color: var(--color-gray);
+      }
+
+      .detail-hero-meta {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .detail-meta-badge {
+        display: inline-block;
+        font-family: var(--font-family-Montserrat);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.25);
+        color: rgba(255,255,255,0.75);
+        white-space: nowrap;
+      }
+
+      .detail-hero-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .detail-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 40px;
+        font-family: var(--font-family-pretendard);
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+
+      .detail-link-btn--primary {
+        background-color: var(--color-accent-main);
+        color: var(--color-white);
+      }
+
+      .detail-link-btn--primary:hover {
+        background-color: #1b8a93;
+        transform: translateY(-2px);
+      }
+
+      .detail-link-btn--outline {
+        background-color: transparent;
+        color: var(--color-white);
+        border: 1.5px solid rgba(255,255,255,0.35);
+      }
+
+      .detail-link-btn--outline:hover {
+        background-color: rgba(255,255,255,0.08);
+        border-color: rgba(255,255,255,0.7);
+        transform: translateY(-2px);
+      }
+
+      /* ===== 본문 ===== */
+
+      .detail-body {
+        width: min(100%, 1050px);
+        margin-inline: auto;
+        padding: 80px 40px 120px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
+
+      /* 섹션 공통 */
+      .detail-section-label {
+        font-family: var(--font-family-Montserrat);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-accent-main);
+        border-bottom: 1.5px solid var(--color-accent-main);
+        padding-bottom: 8px;
+        margin: 0 0 28px 0;
+      }
+
+      /* ===== 기술 스택 ===== */
+      .detail-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .detail-stack-card {
+        border: 1px solid #e8e8e8;
+        border-radius: 14px;
+        padding: 22px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #fafafa;
+      }
+
+      .detail-stack-card-title {
+        margin: 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-gray);
+      }
+
+      .detail-stack-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .detail-stack-tag {
+        font-family: var(--font-family-pretendard);
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--color-black);
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        padding: 4px 12px;
+        white-space: nowrap;
+      }
+
+      /* ===== 핵심 기술 포인트 ===== */
+      .detail-points {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .detail-point-card {
+        border-left: 3px solid var(--color-accent-main);
+        padding: 24px 28px;
+        background-color: #f8fcfc;
+        border-radius: 0 12px 12px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .detail-point-title {
+        margin: 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        color: var(--color-black);
+      }
+
+      .detail-point-desc {
+        margin: 0;
+        font-family: var(--font-family-pretendard);
+        font-size: 14px;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      /* ===== PPT 슬라이드 ===== */
+      .detail-slides {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .detail-slide-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .detail-slide-img-wrap {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #e8e8e8;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .detail-slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .detail-slide-label {
+        font-family: var(--font-family-pretendard);
+        font-size: 12px;
+        color: var(--color-gray);
+        text-align: center;
+      }
+
+      /* PPT 슬라이드 플레이스홀더 */
+      .detail-slide-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #bbb;
+        font-family: var(--font-family-pretendard);
+        font-size: 12px;
+      }
+
+      .detail-slide-placeholder-icon {
+        font-size: 28px;
+      }
+
+      /* ===== 배포 섹션 ===== */
+      .detail-deploy-row {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .detail-deploy-card {
+        flex: 1;
+        min-width: 200px;
+        border: 1px solid #e8e8e8;
+        border-radius: 14px;
+        padding: 22px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-color: #fafafa;
+      }
+
+      .detail-deploy-card-label {
+        font-family: var(--font-family-Montserrat);
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--color-gray);
+        text-transform: uppercase;
+      }
+
+      .detail-deploy-card-value {
+        font-family: var(--font-family-pretendard);
+        font-size: 14px;
+        color: var(--color-black);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .detail-deploy-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--font-family-pretendard);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-accent-main);
+        text-decoration: none;
+        margin-top: 4px;
+        transition: gap 0.2s ease;
+      }
+
+      .detail-deploy-link:hover {
+        gap: 10px;
+        text-decoration: underline;
+      }
+
+      /* ===== PPT 전체 보기 버튼 ===== */
+      .detail-point-num {
+        margin: 0 0 6px 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 900;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        color: var(--color-accent-main);
+      }
+
+      .detail-point-img-wrap {
+        margin-top: 16px;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #e8e8e8;
+      }
+
+      .detail-point-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .detail-ppt-cta {
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+      }
+
+      .detail-ppt-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 32px;
+        border-radius: 40px;
+        background-color: var(--color-black);
+        color: var(--color-white);
+        font-family: var(--font-family-pretendard);
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .detail-ppt-btn:hover {
+        background-color: var(--color-accent-main);
+        transform: translateY(-2px);
+      }
+
+      /* ===== 구분선 ===== */
+      .detail-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #ececec;
+        border: none;
+        margin: 0;
+      }
+
+      /* 스크롤 애니메이션 오버라이드 */
+      .detail-hero {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .detail-body > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .detail-body > *.visible {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="desktop-header">
+      <div class="desktop-header-inner">
+        <div class="logo">
+          <span class="logo-text">HAN.KYOUNG'S PORTFOLIO</span>
+        </div>
+        <nav class="gnb" aria-label="주요 메뉴">
+          <a class="gnb-link" href="index.html">HOME</a>
+          <a class="gnb-link" href="index.html#about">ABOUT</a>
+          <a class="gnb-link" href="index.html#skill">SKILL</a>
+          <a class="gnb-link" href="index.html#project">PROJECT</a>
+          <a class="gnb-link" href="index.html#contact">CONTACT</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="detail-hero">
+      <div class="detail-hero-inner">
+        <a class="detail-back-btn" href="index.html#project">← Back to Projects</a>
+
+        <p class="detail-hero-num">02 · Team Project</p>
+
+        <h1 class="detail-hero-title">SISEON</h1>
+        <p class="detail-hero-caption">— Shopping Mall</p>
+
+        <div class="detail-hero-meta">
+          <span class="detail-meta-badge">4인 팀 프로젝트</span>
+          <span class="detail-meta-badge">기여도 25%</span>
+          <span class="detail-meta-badge">2025.11.28 – 2025.12.26</span>
+          <span class="detail-meta-badge">Java · JSP/Servlet · Oracle · JDBC</span>
+        </div>
+
+        <div class="detail-hero-links">
+          <a class="detail-link-btn detail-link-btn--primary" href="https://github.com/lhk9311/SemiProject" target="_blank">🐙 GitHub</a>
+          <a class="detail-link-btn detail-link-btn--outline" href="https://www.youtube.com/watch?v=UBd21oA-Vpc" target="_blank">▶ 시연 영상</a>
+          <a class="detail-link-btn detail-link-btn--outline" href="https://leehankyoung-semi-project.site" target="_blank">🌐 배포 URL</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BODY ===== -->
+    <div class="detail-body">
+
+      <!-- 기술 스택 -->
+      <div>
+        <p class="detail-section-label">Tech Stack</p>
+        <div class="detail-stack-grid">
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Backend</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">Java</span>
+              <span class="detail-stack-tag">JSP / Servlet</span>
+              <span class="detail-stack-tag">MVC Pattern</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Database</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">Oracle</span>
+              <span class="detail-stack-tag">JDBC</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Frontend</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">HTML / CSS</span>
+              <span class="detail-stack-tag">JavaScript</span>
+              <span class="detail-stack-tag">jQuery</span>
+              <span class="detail-stack-tag">Bootstrap</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Server</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">Apache Tomcat</span>
+              <span class="detail-stack-tag">Nginx</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Infra</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">Vultr VPS</span>
+              <span class="detail-stack-tag">Oracle XE (Docker)</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">External API</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">OAuth2 (Kakao · Naver)</span>
+              <span class="detail-stack-tag">IamPort 결제</span>
+              <span class="detail-stack-tag">CoolSMS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <!-- 핵심 기술 포인트 -->
+      <div>
+        <p class="detail-section-label">Key Technical Points</p>
+        <div class="detail-points">
+
+          <!-- 01 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">01</p>
+            <p class="detail-point-title">OAuth2 Authorization Code Flow 직접 구현</p>
+            <p class="detail-point-desc">
+              Spring Security 없이 순수 Servlet 환경에서 네이버·카카오 소셜 로그인을 직접 구현.
+              socialId 기반 DB 조회로 기존/신규 회원을 자동 분기 처리하고,
+              신규 회원은 추가 정보 입력 후 정식 회원으로 전환되는 흐름을 설계.
+              CSRF 방어를 위한 state 파라미터도 적용.
+            </p>
+            <div class="detail-point-img-wrap">
+              <img class="detail-point-img" src="/images/siseon-slide-1.png" alt="소셜 로그인 시퀀스 다이어그램" />
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">02</p>
+            <p class="detail-point-title">배송지 스냅샷으로 주문 이력 정합성 유지</p>
+            <p class="detail-point-desc">
+              배송지를 FK 참조 방식으로 관리하면 회원이 주소를 수정했을 때 과거 주문 이력의 배송지도 바뀌는 문제 발생.
+              주문 시점에 배송지 정보를 주문 테이블에 직접 복사해 저장(스냅샷)하는 방식으로 해결.
+              도메인 특성상 주문 시점 데이터 보존을 우선해 역정규화를 의도적으로 적용.
+            </p>
+            <div class="detail-point-img-wrap">
+              <img class="detail-point-img" src="/images/siseon-slide-2.png" alt="배송지 스냅샷 트러블슈팅" />
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">03</p>
+            <p class="detail-point-title">주문 상태 3단계 분리로 재고 차감 시점 제어</p>
+            <p class="detail-point-desc">
+              초기 설계에서 관리자가 승인 클릭 시 완료 처리 + 재고 감소가 즉시 발생해,
+              잘못 승인해도 되돌리기 어려운 구조였음.
+              REQUEST → APPROVED(처리대기) → COMPLETED 3단계로 상태를 분리해
+              승인과 재고 차감 시점을 분리. 관리자 실수로 인한 즉각적 재고 변경을 차단.
+            </p>
+            <div class="detail-point-img-wrap">
+              <img class="detail-point-img" src="/images/siseon-slide-3.png" alt="주문 상태 분리 트러블슈팅" />
+            </div>
+          </div>
+
+          <!-- 04 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">04</p>
+            <p class="detail-point-title">PPT 문서화 — 스토리보드 · 시퀀스 다이어그램 · 트러블슈팅</p>
+            <p class="detail-point-desc">
+              설계 단계부터 기능 명세, 시퀀스 다이어그램, 트러블슈팅까지 전 과정을 문서화.
+              소셜 로그인 흐름, 주문 상태 전이, 배송지 스냅샷 설계 결정 근거를 포함.
+            </p>
+            <a class="detail-deploy-link" href="https://www.canva.com/design/DAHBM_4bkgg/9G5BpjgAa5WxccCtyKX6eA/edit" target="_blank">📄 PPT 전체 보기 →</a>
+          </div>
+
+          <!-- 05 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">05</p>
+            <p class="detail-point-title">수동 배포 — Vultr VPS + Tomcat + Nginx</p>
+            <p class="detail-point-desc">
+              CI/CD 자동화 이전에 서버 구조를 직접 이해하기 위해 수동 배포를 선택.
+              Vultr VPS에 Tomcat · Nginx · Oracle XE(Docker)를 직접 설치하고
+              도메인 연결까지 진행하며 서버 구성 전반을 경험.
+              이후 CIEL 프로젝트에서 Jenkins + Docker 자동화 배포로 발전.
+            </p>
+            <a class="detail-deploy-link" href="https://lhk9311.tistory.com/6" target="_blank">📝 배포 블로그 포스팅 →</a>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <!-- 배포 -->
+      <div>
+        <p class="detail-section-label">Deployment</p>
+        <div class="detail-deploy-row">
+          <div class="detail-deploy-card">
+            <p class="detail-deploy-card-label">Environment</p>
+            <p class="detail-deploy-card-value">Vultr VPS · Apache Tomcat · Oracle XE (Docker) · Nginx</p>
+          </div>
+          <div class="detail-deploy-card">
+            <p class="detail-deploy-card-label">Live URL</p>
+            <p class="detail-deploy-card-value">
+              <a class="detail-deploy-link" href="https://leehankyoung-semi-project.site" target="_blank">leehankyoung-semi-project.site →</a>
+            </p>
+          </div>
+          <div class="detail-deploy-card">
+            <p class="detail-deploy-card-label">배포 블로그 (상세)</p>
+            <p class="detail-deploy-card-value">
+              <a class="detail-deploy-link" href="https://lhk9311.tistory.com/6" target="_blank">Tistory 포스팅 보기 →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      // 헤더 스크롤 그림자
+      const header = document.querySelector('.desktop-header')
+      window.addEventListener('scroll', () => {
+        header.style.boxShadow = window.scrollY > 10
+          ? '0 2px 20px rgba(0,0,0,0.08)'
+          : 'none'
+      })
+
+      // 본문 섹션 스크롤 페이드인
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible')
+        })
+      }, { threshold: 0.1 })
+
+      document.querySelectorAll('.detail-body > *').forEach(el => observer.observe(el))
+
+      // 커스텀 커서
+      const cursor = document.createElement('div')
+      const cursorDot = document.createElement('div')
+      cursor.style.cssText = `position:fixed;width:36px;height:36px;border:2px solid #21a0aa;border-radius:50%;pointer-events:none;z-index:99999;transition:transform 0.15s ease;transform:translate(-50%,-50%);`
+      cursorDot.style.cssText = `position:fixed;width:6px;height:6px;background:#21a0aa;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);`
+      document.body.appendChild(cursor)
+      document.body.appendChild(cursorDot)
+      document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px'
+        cursor.style.top = e.clientY + 'px'
+        cursorDot.style.left = e.clientX + 'px'
+        cursorDot.style.top = e.clientY + 'px'
+      })
+
+      // 맨 위로 버튼
+      const scrollTopBtn = document.createElement('button')
+      scrollTopBtn.innerHTML = '↑'
+      scrollTopBtn.className = 'scroll-top-btn'
+      document.body.appendChild(scrollTopBtn)
+      window.addEventListener('scroll', () => {
+        scrollTopBtn.classList.toggle('visible', window.scrollY > 300)
+      })
+      scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+    </script>
+  </body>
+</html>
+<!-- siseon point num/img style injected -->

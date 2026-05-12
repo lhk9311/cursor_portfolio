@@ -1805,3 +1805,61 @@ section.visible {
   transform: translateY(-3px);
 }
 
+
+/* teamproject-link 밑줄 제거 */
+a.teamproject-link {
+  text-decoration: none;
+  color: inherit;
+}
+a.teamproject-link:hover {
+  text-decoration: none;
+}
+
+/* project-badge-group */
+.project-badge-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-badge {
+  display: inline-block;
+  font-family: var(--font-family-Montserrat);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-black);
+  border: 1.5px solid var(--color-black);
+  border-radius: 20px;
+  padding: 5px 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.project-badge:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+}
+.project-badge--blog {
+  border-color: var(--color-accent-main);
+  color: var(--color-accent-main);
+}
+.project-badge--blog:hover {
+  background-color: var(--color-accent-main);
+  color: var(--color-white);
+}
+
+/* SISEON 카드 mockup 이미지 크기 조정 */
+.desktop-section-teamproject .teamproject-list-mockup-wrap {
+  flex: 0 0 460px;
+  width: 460px;
+  height: 355px;
+}
+
+/* mockup 이미지 잘림 방지 */
+.desktop-section-teamproject .teamproject-list-mockup {
+  object-fit: contain;
+  background-color: #f5f5f5;
+}
