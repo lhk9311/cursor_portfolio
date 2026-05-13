@@ -1,3 +1,5 @@
+import '../desktop-static/style.css'
+
 import Hero from './components/Hero/Hero.jsx'
 import './App.css'
 
