@@ -6,455 +6,80 @@
     <title>HAN.KYOUNG'S PORTFOLIO — CIEL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* ===== 상세 페이지 전용 스타일 ===== */
+      body { background-color: #fff; }
+      .detail-hero { width:100%; background-color:var(--color-black); padding:120px 0 80px 0; opacity:1!important; transform:none!important; }
+      .detail-hero-inner { width:min(100%,1050px); margin-inline:auto; padding:0 40px; display:flex; flex-direction:column; gap:24px; }
+      .detail-back-btn { display:inline-flex; align-items:center; gap:8px; font-family:var(--font-family-Montserrat); font-size:12px; font-weight:600; color:var(--color-accent-main); text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:gap 0.2s ease; width:fit-content; }
+      .detail-back-btn:hover { gap:14px; }
+      .detail-hero-num { font-family:var(--font-family-Montserrat); font-weight:900; font-size:13.5px; color:var(--color-accent-main); letter-spacing:0.15em; text-transform:uppercase; margin:0; }
+      .detail-hero-title { margin:0; font-family:var(--font-family-Montserrat); font-weight:900; font-size:90px; line-height:0.95; letter-spacing:-0.03em; color:var(--color-white); text-transform:uppercase; }
+      .detail-hero-caption { margin:0; font-family:var(--font-family-pp-editorial-new); font-size:22px; font-style:italic; color:var(--color-gray); }
+      .detail-hero-meta { display:flex; flex-direction:row; flex-wrap:wrap; gap:12px; margin-top:8px; }
+      .detail-meta-badge { display:inline-block; font-family:var(--font-family-Montserrat); font-size:11px; font-weight:600; letter-spacing:0.06em; padding:6px 16px; border-radius:20px; border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.75); white-space:nowrap; }
+      .detail-hero-links { display:flex; flex-direction:row; flex-wrap:wrap; gap:12px; margin-top:8px; }
+      .detail-link-btn { display:inline-flex; align-items:center; gap:8px; padding:12px 28px; border-radius:40px; font-family:var(--font-family-pretendard); font-size:14px; font-weight:600; text-decoration:none; transition:all 0.2s ease; white-space:nowrap; }
+      .detail-link-btn--primary { background-color:var(--color-accent-main); color:var(--color-white); }
+      .detail-link-btn--primary:hover { background-color:#1b8a93; transform:translateY(-2px); }
+      .detail-link-btn--outline { background-color:transparent; color:var(--color-white); border:1.5px solid rgba(255,255,255,0.35); }
+      .detail-link-btn--outline:hover { background-color:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.7); transform:translateY(-2px); }
+      .detail-body { width:min(100%,1050px); margin-inline:auto; padding:80px 40px 120px 40px; display:flex; flex-direction:column; gap:80px; }
+      .detail-section-label { font-family:var(--font-family-Montserrat); font-weight:800; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-accent-main); border-bottom:1.5px solid var(--color-accent-main); padding-bottom:8px; margin:0 0 28px 0; }
+      .detail-stack-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+      .detail-stack-card { border:1px solid #e8e8e8; border-radius:14px; padding:22px 24px; display:flex; flex-direction:column; gap:12px; background-color:#fafafa; }
+      .detail-stack-card-title { margin:0; font-family:var(--font-family-Montserrat); font-weight:700; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-gray); }
+      .detail-stack-tags { display:flex; flex-wrap:wrap; gap:6px; }
+      .detail-stack-tag { font-family:var(--font-family-pretendard); font-size:12px; font-weight:500; color:var(--color-black); background-color:#fff; border:1px solid #e0e0e0; border-radius:20px; padding:4px 12px; white-space:nowrap; }
+      .detail-points { display:flex; flex-direction:column; gap:20px; }
+      .detail-point-card { border-left:3px solid var(--color-accent-main); padding:24px 28px; background-color:#f8fcfc; border-radius:0 12px 12px 0; display:flex; flex-direction:column; gap:8px; }
+      .detail-point-title { margin:0; font-family:var(--font-family-Montserrat); font-weight:700; font-size:13px; letter-spacing:0.04em; color:var(--color-black); }
+      .detail-point-desc { margin:0; font-family:var(--font-family-pretendard); font-size:14px; line-height:1.8; color:#444; }
+      .detail-point-num { margin:0 0 6px 0; font-family:var(--font-family-Montserrat); font-weight:900; font-size:13px; letter-spacing:0.12em; color:var(--color-accent-main); }
+      .detail-point-img-wrap { margin-top:16px; width:100%; border-radius:10px; overflow:hidden; border:1px solid #e8e8e8; }
+      .detail-point-img { display:block; width:100%; height:auto; object-fit:contain; }
+      .detail-deploy-row { display:flex; flex-direction:row; gap:20px; flex-wrap:wrap; }
+      .detail-deploy-card { flex:1; min-width:200px; border:1px solid #e8e8e8; border-radius:14px; padding:22px 24px; display:flex; flex-direction:column; gap:8px; background-color:#fafafa; }
+      .detail-deploy-card-label { font-family:var(--font-family-Montserrat); font-weight:700; font-size:10px; letter-spacing:0.12em; color:var(--color-gray); text-transform:uppercase; }
+      .detail-deploy-card-value { font-family:var(--font-family-pretendard); font-size:14px; color:var(--color-black); line-height:1.6; margin:0; }
+      .detail-deploy-link { display:inline-flex; align-items:center; gap:6px; font-family:var(--font-family-pretendard); font-size:13px; font-weight:600; color:var(--color-accent-main); text-decoration:none; margin-top:4px; transition:gap 0.2s ease; }
+      .detail-deploy-link:hover { gap:10px; text-decoration:underline; }
+      .detail-divider { width:100%; height:1px; background-color:#ececec; border:none; margin:0; }
+      .detail-body > * { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease,transform 0.6s ease; }
+      .detail-body > *.visible { opacity:1; transform:none; }
 
-      body {
-        background-color: #fff;
-      }
+      /* perf-table */
+      .perf-table { width:100%; border-collapse:separate; border-spacing:0; border:0.75px solid #e0e0e0; border-radius:12px; overflow:hidden; margin-top:20px; }
+      .perf-table th { background-color:#f5f5f5; color:#888; font-family:var(--font-family-Montserrat); font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:10px 16px; text-align:left; border-bottom:0.75px solid #e0e0e0; }
+      .perf-table td { padding:18px 16px; border-bottom:0.75px solid #e0e0e0; vertical-align:middle; }
+      .perf-table tr:last-child td { border-bottom:none; }
+      .perf-scan { display:inline-block; font-family:var(--font-family-Montserrat); font-size:11px; font-weight:500; color:#777; background-color:#f0f0f0; border:0.75px solid #e0e0e0; border-radius:6px; padding:4px 10px; white-space:nowrap; }
+      .perf-bad { display:inline-flex; align-items:center; margin-top:6px; font-family:var(--font-family-Montserrat); font-size:13px; font-weight:700; padding:5px 13px; border-radius:20px; background-color:#FAECE7; color:#993C1D; white-space:nowrap; }
+      .perf-good { display:inline-flex; align-items:center; margin-top:6px; font-family:var(--font-family-Montserrat); font-size:13px; font-weight:700; padding:5px 13px; border-radius:20px; background-color:#E1F5EE; color:#085041; white-space:nowrap; }
+      .perf-improve { display:inline-flex; align-items:center; font-family:var(--font-family-Montserrat); font-size:13px; font-weight:700; padding:6px 14px; border-radius:20px; background-color:#EAF3DE; color:#3B6D11; white-space:nowrap; }
+      code.inline { background:#eef6f7; padding:2px 6px; border-radius:4px; font-size:13px; }
 
-      .detail-hero {
-        width: 100%;
-        background-color: var(--color-black);
-        padding: 120px 0 80px 0;
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
-      .detail-hero-inner {
-        width: min(100%, 1050px);
-        margin-inline: auto;
-        padding: 0 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .detail-back-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-family: var(--font-family-Montserrat);
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--color-accent-main);
-        text-decoration: none;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        transition: gap 0.2s ease;
-        width: fit-content;
-      }
-
-      .detail-back-btn:hover {
-        gap: 14px;
-      }
-
-      .detail-hero-num {
-        font-family: var(--font-family-Montserrat);
-        font-weight: 900;
-        font-size: 13.5px;
-        color: var(--color-accent-main);
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        margin: 0;
-      }
-
-      .detail-hero-title {
-        margin: 0;
-        font-family: var(--font-family-Montserrat);
-        font-weight: 900;
-        font-size: 90px;
-        line-height: 0.95;
-        letter-spacing: -0.03em;
-        color: var(--color-white);
-        text-transform: uppercase;
-      }
-
-      .detail-hero-caption {
-        margin: 0;
-        font-family: var(--font-family-pp-editorial-new);
-        font-size: 22px;
-        font-style: italic;
-        color: var(--color-gray);
-      }
-
-      .detail-hero-meta {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 8px;
-      }
-
-      .detail-meta-badge {
-        display: inline-block;
-        font-family: var(--font-family-Montserrat);
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        padding: 6px 16px;
-        border-radius: 20px;
-        border: 1px solid rgba(255,255,255,0.25);
-        color: rgba(255,255,255,0.75);
-        white-space: nowrap;
-      }
-
-      .detail-hero-links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 8px;
-      }
-
-      .detail-link-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 28px;
-        border-radius: 40px;
-        font-family: var(--font-family-pretendard);
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        white-space: nowrap;
-      }
-
-      .detail-link-btn--primary {
-        background-color: var(--color-accent-main);
-        color: var(--color-white);
-      }
-
-      .detail-link-btn--primary:hover {
-        background-color: #1b8a93;
-        transform: translateY(-2px);
-      }
-
-      .detail-link-btn--outline {
-        background-color: transparent;
-        color: var(--color-white);
-        border: 1.5px solid rgba(255,255,255,0.35);
-      }
-
-      .detail-link-btn--outline:hover {
-        background-color: rgba(255,255,255,0.08);
-        border-color: rgba(255,255,255,0.7);
-        transform: translateY(-2px);
-      }
-
-      /* ===== 본문 ===== */
-
-      .detail-body {
-        width: min(100%, 1050px);
-        margin-inline: auto;
-        padding: 80px 40px 120px 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 80px;
-      }
-
-      /* 섹션 공통 */
-      .detail-section-label {
-        font-family: var(--font-family-Montserrat);
-        font-weight: 800;
-        font-size: 11px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--color-accent-main);
-        border-bottom: 1.5px solid var(--color-accent-main);
-        padding-bottom: 8px;
-        margin: 0 0 28px 0;
-      }
-
-      /* ===== 기술 스택 ===== */
-      .detail-stack-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-
-      .detail-stack-card {
-        border: 1px solid #e8e8e8;
-        border-radius: 14px;
-        padding: 22px 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        background-color: #fafafa;
-      }
-
-      .detail-stack-card-title {
-        margin: 0;
-        font-family: var(--font-family-Montserrat);
-        font-weight: 700;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--color-gray);
-      }
-
-      .detail-stack-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-
-      .detail-stack-tag {
-        font-family: var(--font-family-pretendard);
-        font-size: 12px;
-        font-weight: 500;
-        color: var(--color-black);
-        background-color: #fff;
-        border: 1px solid #e0e0e0;
-        border-radius: 20px;
-        padding: 4px 12px;
-        white-space: nowrap;
-      }
-
-      /* ===== 핵심 기술 포인트 ===== */
-      .detail-points {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .detail-point-card {
-        border-left: 3px solid var(--color-accent-main);
-        padding: 24px 28px;
-        background-color: #f8fcfc;
-        border-radius: 0 12px 12px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .detail-point-title {
-        margin: 0;
-        font-family: var(--font-family-Montserrat);
-        font-weight: 700;
-        font-size: 13px;
-        letter-spacing: 0.04em;
-        color: var(--color-black);
-      }
-
-      .detail-point-desc {
-        margin: 0;
-        font-family: var(--font-family-pretendard);
-        font-size: 14px;
-        line-height: 1.8;
-        color: #444;
-      }
-
-      /* ===== PPT 슬라이드 ===== */
-      .detail-slides {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-
-      .detail-slide-card {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .detail-slide-img-wrap {
-        width: 100%;
-        aspect-ratio: 16/9;
-        border-radius: 10px;
-        overflow: hidden;
-        border: 1px solid #e8e8e8;
-        background-color: #f0f0f0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .detail-slide-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .detail-slide-label {
-        font-family: var(--font-family-pretendard);
-        font-size: 12px;
-        color: var(--color-gray);
-        text-align: center;
-      }
-
-      /* PPT 슬라이드 플레이스홀더 */
-      .detail-slide-placeholder {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        color: #bbb;
-        font-family: var(--font-family-pretendard);
-        font-size: 12px;
-      }
-
-      .detail-slide-placeholder-icon {
-        font-size: 28px;
-      }
-
-      /* ===== 배포 섹션 ===== */
-      .detail-deploy-row {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-
-      .detail-deploy-card {
-        flex: 1;
-        min-width: 200px;
-        border: 1px solid #e8e8e8;
-        border-radius: 14px;
-        padding: 22px 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        background-color: #fafafa;
-      }
-
-      .detail-deploy-card-label {
-        font-family: var(--font-family-Montserrat);
-        font-weight: 700;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-        color: var(--color-gray);
-        text-transform: uppercase;
-      }
-
-      .detail-deploy-card-value {
-        font-family: var(--font-family-pretendard);
-        font-size: 14px;
-        color: var(--color-black);
-        line-height: 1.6;
-        margin: 0;
-      }
-
-      .detail-deploy-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        font-family: var(--font-family-pretendard);
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--color-accent-main);
-        text-decoration: none;
-        margin-top: 4px;
-        transition: gap 0.2s ease;
-      }
-
-      .detail-deploy-link:hover {
-        gap: 10px;
-        text-decoration: underline;
-      }
-
-      /* ===== PPT 전체 보기 버튼 ===== */
-      .detail-point-num {
-        margin: 0 0 6px 0;
-        font-family: var(--font-family-Montserrat);
-        font-weight: 900;
-        font-size: 13px;
-        letter-spacing: 0.12em;
-        color: var(--color-accent-main);
-      }
-
-      .detail-point-img-wrap {
-        margin-top: 16px;
-        width: 100%;
-        border-radius: 10px;
-        overflow: hidden;
-        border: 1px solid #e8e8e8;
-      }
-
-      .detail-point-img {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-      }
-
-      .detail-ppt-cta {
-        display: flex;
-        justify-content: center;
-        margin-top: 8px;
-      }
-
-      .detail-ppt-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 14px 32px;
-        border-radius: 40px;
-        background-color: var(--color-black);
-        color: var(--color-white);
-        font-family: var(--font-family-pretendard);
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
-
-      .detail-ppt-btn:hover {
-        background-color: var(--color-accent-main);
-        transform: translateY(-2px);
-      }
-
-      /* ===== 구분선 ===== */
-      .detail-divider {
-        width: 100%;
-        height: 1px;
-        background-color: #ececec;
-        border: none;
-        margin: 0;
-      }
-
-      /* 스크롤 애니메이션 오버라이드 */
-      .detail-hero {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
-      .detail-body > * {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
-      }
-
-      .detail-body > *.visible {
-        opacity: 1;
-        transform: none;
-      }
+      /* DB 설계 카드 전용 */
+      .db-design-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:16px; }
+      .db-design-item { background:#fff; border:0.75px solid #e8e8e8; border-radius:10px; padding:16px 18px; display:flex; flex-direction:column; gap:6px; }
+      .db-design-item-label { font-family:var(--font-family-Montserrat); font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-accent-main); }
+      .db-design-item-tables { display:flex; flex-wrap:wrap; gap:5px; margin-top:2px; }
+      .db-tbl-badge { font-family:var(--font-family-Montserrat); font-size:11px; font-weight:600; padding:3px 10px; border-radius:20px; background:#eef6f7; color:#0F6E56; white-space:nowrap; border:0.75px solid #b2dfd9; }
+      .db-design-item-desc { font-family:var(--font-family-pretendard); font-size:13px; line-height:1.7; color:#555; margin-top:4px; }
+      .db-hard-box { margin-top:16px; background:#fffbf0; border:0.75px solid #f5d87a; border-radius:10px; padding:16px 20px; }
+      .db-hard-box-title { font-family:var(--font-family-Montserrat); font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#856404; margin:0 0 10px 0; }
+      .db-hard-list { display:flex; flex-direction:column; gap:8px; padding:0; margin:0; list-style:none; }
+      .db-hard-list li { font-family:var(--font-family-pretendard); font-size:13px; line-height:1.7; color:#555; padding-left:16px; position:relative; }
+      .db-hard-list li::before { content:"→"; position:absolute; left:0; color:#856404; font-weight:700; }
     </style>
   </head>
   <body>
 
-    <!-- ===== HEADER ===== -->
     <header class="desktop-header">
       <div class="desktop-header-inner">
-        <div class="logo">
-          <span class="logo-text">HAN.KYOUNG'S PORTFOLIO</span>
-        </div>
+        <div class="logo"><span class="logo-text">HAN.KYOUNG'S PORTFOLIO</span></div>
         <nav class="gnb" aria-label="주요 메뉴">
           <a class="gnb-link" href="index.html">HOME</a>
           <a class="gnb-link" href="index.html#about">ABOUT</a>
@@ -465,23 +90,18 @@
       </div>
     </header>
 
-    <!-- ===== HERO ===== -->
     <section class="detail-hero">
       <div class="detail-hero-inner">
         <a class="detail-back-btn" href="index.html#project">← Back to Projects</a>
-
         <p class="detail-hero-num">01 · Team Project</p>
-
         <h1 class="detail-hero-title">CIEL</h1>
         <p class="detail-hero-caption">— Hotel Reservation System</p>
-
         <div class="detail-hero-meta">
           <span class="detail-meta-badge">4인 팀 프로젝트</span>
           <span class="detail-meta-badge">기여도 30%</span>
           <span class="detail-meta-badge">2026.02.24 – 2026.03.31</span>
           <span class="detail-meta-badge">Java · Spring Boot · Oracle</span>
         </div>
-
         <div class="detail-hero-links">
           <a class="detail-link-btn detail-link-btn--primary" href="https://github.com/lhk9311/Final_hotel" target="_blank">🐙 GitHub</a>
           <a class="detail-link-btn detail-link-btn--outline" href="https://www.youtube.com/watch?v=h7kKvMWW5Cc" target="_blank">▶ 시연 영상</a>
@@ -490,7 +110,6 @@
       </div>
     </section>
 
-    <!-- ===== BODY ===== -->
     <div class="detail-body">
 
       <!-- 기술 스택 -->
@@ -510,6 +129,7 @@
             <p class="detail-stack-card-title">Database</p>
             <div class="detail-stack-tags">
               <span class="detail-stack-tag">Oracle</span>
+              <span class="detail-stack-tag">MyBatis</span>
             </div>
           </div>
           <div class="detail-stack-card">
@@ -549,7 +169,6 @@
 
       <hr class="detail-divider" />
 
-      <!-- 핵심 기술 포인트 -->
       <div>
         <p class="detail-section-label">Key Technical Points</p>
         <div class="detail-points">
@@ -557,13 +176,124 @@
           <!-- 01 -->
           <div class="detail-point-card">
             <p class="detail-point-num">01</p>
+            <p class="detail-point-title">동시 예약 중복 방지 — SELECT FOR UPDATE 비관적 락</p>
+            <p class="detail-point-desc">
+              동일 객실·날짜에 다수 요청이 동시 도달할 경우 재고가 음수로 차감되는 Race Condition 문제를 식별했습니다.<br><br>
+              MyBatis에서 <code class="inline">SELECT ... FOR UPDATE</code>로 해당 row에 배타 락을 걸어 트랜잭션 완료 전까지 다른 트랜잭션의 접근을 차단했습니다.
+              재고 0 확인 시 <code class="inline">RuntimeException</code>을 발생시켜 <code class="inline">@Transactional</code> 전체 롤백으로 원자성을 보장했습니다.<br><br>
+              낙관적 락 대신 비관적 락을 선택한 이유는 예약 도메인 특성상 충돌 빈도가 높아 롤백 재시도 비용보다 선점 대기가 유리하다고 판단했기 때문입니다.
+            </p>
+            <div class="detail-point-img-wrap">
+              <img class="detail-point-img" src="images/ciel-concurrency.png" alt="SELECT FOR UPDATE 트랜잭션 처리 슬라이드" />
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">02</p>
+            <p class="detail-point-title">회원 유형별 알림 분기 + Spring Scheduler 리마인드</p>
+            <p class="detail-point-desc">
+              예약 완료 후 회원 유형에 따라 알림 채널을 분기했습니다.
+              일반 회원은 JavaMail(SMTP) 이메일, 비회원은 CoolSMS API 문자를 발송하며, 알림 로직을 별도 서비스 계층으로 분리했습니다.<br><br>
+              <code class="inline">@Scheduled</code> cron 표현식으로 매일 자정 체크인 전일 예약 건을 조회해 리마인드 메일을 자동 발송하는 배치성 스케줄러를 구현했습니다.
+            </p>
+            <div class="detail-point-img-wrap">
+              <img class="detail-point-img" src="images/sequence-diagram.png" alt="회원 유형별 알림 분기 슬라이드" />
+            </div>
+            <div class="detail-point-img-wrap">
+              <img class="detail-point-img" src="images/spring-scheduler.png" alt="스프링 스케줄러" />
+            </div>
+          </div>
+
+        <!-- 03 DB 설계 -->
+        <div class="detail-point-card">
+          <p class="detail-point-num">03</p>
+          <p class="detail-point-title">비즈니스 로직 중심 DB 테이블 설계 — 역할별 분리 구조</p>
+          <p class="detail-point-desc">
+            단순 예약 저장을 넘어 예약 상태 관리, 재고 차감, 시즌별 요금 정책, 프로모션 적용 등
+            복잡한 비즈니스 로직을 수용하기 위해 역할 단위로 테이블을 분리했습니다.
+          </p>
+
+          <!-- ERD 이미지 -->
+          <div class="detail-point-img-wrap">
+            <img class="detail-point-img" src="images/ciel-erd.png" alt="CIEL ERD — 회원/인증/객실 영역" />
+          </div>
+
+          <!-- 설계 의도 그리드 -->
+          <div class="db-design-grid">
+
+            <div class="db-design-item">
+              <div class="db-design-item-label">객실 정보 / 재고 분리</div>
+              <div class="db-design-item-tables">
+                <span class="db-tbl-badge">ROOM_TYPE</span>
+                <span class="db-tbl-badge">ROOM_STOCK</span>
+              </div>
+              <p class="db-design-item-desc">
+                객실 기본 정보(타입·사이즈·정원)는 변경 빈도가 낮아 <code class="inline">ROOM_TYPE</code>에 고정.<br>
+                날짜별 가용 수량은 <code class="inline">ROOM_STOCK</code>으로 분리해 재고 변동을 독립적으로 관리.
+              </p>
+            </div>
+
+            <div class="db-design-item">
+              <div class="db-design-item-label">시즌 / 요일 요금 정책</div>
+              <div class="db-design-item-tables">
+                <span class="db-tbl-badge">SEASON</span>
+                <span class="db-tbl-badge">WEEKDAY_RATE</span>
+              </div>
+              <p class="db-design-item-desc">
+                성수기·비수기 기간은 <code class="inline">SEASON</code>, 요일별 가격 정책은 <code class="inline">WEEKDAY_RATE</code>로 분리.<br>
+                같은 객실이어도 날짜·요일 조합에 따라 요금이 동적으로 계산되도록 설계.
+              </p>
+            </div>
+
+            <div class="db-design-item">
+              <div class="db-design-item-label">프로모션 다중 적용</div>
+              <div class="db-design-item-tables">
+                <span class="db-tbl-badge">PROMOTION_MASTER</span>
+                <span class="db-tbl-badge">RESERVATION_PROMOTION_MAPPING</span>
+              </div>
+              <p class="db-design-item-desc">
+                프로모션 정책은 <code class="inline">PROMOTION_MASTER</code>에 별도 관리.<br>
+                매핑 테이블로 하나의 예약에 여러 할인 정책을 연결할 수 있는 N:M 구조로 설계.
+              </p>
+            </div>
+
+            <div class="db-design-item">
+              <div class="db-design-item-label">예약 중심 데이터 연결</div>
+              <div class="db-design-item-tables">
+                <span class="db-tbl-badge">RESERVATION</span>
+                <span class="db-tbl-badge">ROOM_STOCK</span>
+                <span class="db-tbl-badge">PAYMENT</span>
+              </div>
+              <p class="db-design-item-desc">
+                <code class="inline">RESERVATION</code>을 중심으로 재고·결제·프로모션 데이터를 연결.<br>
+                예약 상태(대기·확정·취소)와 결제 정보를 분리해 환불 처리 시 독립적 롤백 가능.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- 어려웠던 부분 -->
+          <div class="db-hard-box">
+            <p class="db-hard-box-title">⚠ 예약 가능 여부 판단 — 가장 복잡했던 부분</p>
+            <ul class="db-hard-list">
+              <li>단순 객실 존재 여부가 아닌 <b>ROOM_STOCK에서 해당 날짜 재고 잔여 여부</b>를 먼저 확인해야 했음</li>
+              <li>같은 객실이어도 <b>SEASON + WEEKDAY_RATE 데이터를 함께 조회</b>해야 정확한 금액 산출 가능</li>
+              <li>적용 가능한 <b>프로모션 존재 여부까지 동시에 확인</b>해야 최종 예약 금액 확정 가능</li>
+              <li>결과적으로 단일 테이블 기준 처리 불가 → <b>RESERVATION 중심으로 재고·시즌·프로모션을 JOIN하는 구조</b>로 설계</li>
+            </ul>
+          </div>
+
+        </div>
+
+          <!-- 04 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">04</p>
             <p class="detail-point-title">K6 부하테스트 — XSSF vs SXSSF 성능 비교</p>
             <p class="detail-point-desc">
-              대용량 엑셀 다운로드 API(10,112건)에 대해 K6로 동시 사용자 10명 → 50명 시나리오로 부하테스트를 진행하였습니다.
-              XSSF(기존)는 평균 응답시간 89ms로 빠르지만 전체 데이터를 힙에 올리는 구조상 동시 50명 + 힙 64MB 제한 조건에서 OOM이 발생하여 서버가 다운됐습니다.
+              대용량 엑셀 다운로드 API(10,112건)에 대해 K6로 동시 사용자 10명 → 50명 시나리오로 부하테스트를 진행했습니다.
+              XSSF(기존)는 평균 응답시간 89ms로 빠르지만 전체 데이터를 힙에 올리는 구조상 동시 50명 + 힙 64MB 제한 조건에서 OOM이 발생해 서버가 다운됐습니다.
               SXSSF(개선)는 평균 응답시간 16.63s로 느리지만 페이징 스트리밍 방식으로 고부하 상황에서도 전 요청이 정상 완료됐습니다.
-              속도보다 서버 안정성을 우선한 리팩토링 근거를 수치로 검증했습니다.
-              K6 결과를 InfluxDB에 저장하고 Grafana로 시각화하는 모니터링 환경도 구축했습니다.
             </p>
             <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
               <a class="detail-deploy-link" href="https://lhk9311.tistory.com/8" target="_blank">📝 1편 블로그 →</a>
@@ -571,25 +301,27 @@
             </div>
           </div>
 
-          <!-- 02 -->
+          <!-- 05 -->
           <div class="detail-point-card">
-            <p class="detail-point-num">02</p>
+            <p class="detail-point-num">05</p>
             <p class="detail-point-title">Jenkins + Docker CI/CD 파이프라인 구축</p>
             <p class="detail-point-desc">
-              GitHub push 시 Jenkins가 자동으로 빌드 · Docker 이미지 생성 · Docker Hub 푸시 · AWS EC2 배포까지 진행되는 CI/CD 파이프라인을 구축했습니다.
+              이전 세미프로젝트에서는 서버 구조 이해를 위해 Vultr VPS 환경에 Tomcat · Nginx · Oracle XE(Docker)를 직접 설치하며 수동 배포를 진행했습니다.
+              이후 CIEL 프로젝트에서는 반복적인 배포 과정을 개선하기 위해 GitHub push 시 Jenkins가 자동으로 빌드 · Docker 이미지 생성 · Docker Hub 푸시 · AWS EC2 배포까지 진행되는 CI/CD 파이프라인을 구축했습니다.
               Docker Compose로 Spring Boot · Oracle XE · Nginx 컨테이너를 일괄 관리했습니다.
-              SISEON 프로젝트의 수동 배포 경험을 바탕으로 자동화의 필요성을 직접 체감하고 전환한 구조입니다.
             </p>
             <a class="detail-deploy-link" href="https://lhk9311.tistory.com/entry/%EB%B0%B0%ED%8F%AC-Spring-Boot-Jenkins-CICD-Docker-Oracle-XEDocker-AWS-EC2-%EB%B0%B0%ED%8F%AC-%EC%A0%95%EB%A6%AC" target="_blank">📝 배포 블로그 포스팅 →</a>
           </div>
 
-          <!-- 03 -->
+          <!-- 06 -->
           <div class="detail-point-card">
-            <p class="detail-point-num">03</p>
+            <p class="detail-point-num">06</p>
             <p class="detail-point-title">Swagger UI + PPT 문서화</p>
             <p class="detail-point-desc">
-              Swagger UI를 적용하여 REST API 명세를 자동 문서화했습니다. 팀원 간 API 엔드포인트 · 요청/응답 구조를 별도 문서 없이 실시간으로 공유하고 테스트할 수 있는 환경을 구성했습니다.
-              설계 단계부터 기능 명세 · 시퀀스 다이어그램 · 트러블슈팅까지 PPT로 전 과정을 문서화하였습니다.
+              Swagger UI를 적용하여 REST API 명세를 자동 문서화했습니다.
+              팀원 간 API 엔드포인트 · 요청/응답 구조를 실시간으로 공유하고 테스트할 수 있는 환경을 구성했습니다.
+              PPT 기반의 코드 분석 · 스토리보드 · ERD · 다이어그램 · 트러블슈팅 내용을 함께 정리했습니다.
+              단순 구현을 넘어 팀원 간 기능 이해와 커뮤니케이션이 원활하도록 협업 중심의 문서화 환경을 구축했습니다.
             </p>
             <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
               <a class="detail-deploy-link" href="http://52.78.28.91/final_hotel/swagger-ui/swagger-ui/index.html" target="_blank">📋 Swagger UI →</a>
@@ -597,17 +329,86 @@
             </div>
           </div>
 
-          <!-- 04 -->
+          <!-- 07 -->
           <div class="detail-point-card">
-            <p class="detail-point-num">04</p>
+            <p class="detail-point-num">07</p>
             <p class="detail-point-title">SonarQube 코드 품질 개선</p>
             <p class="detail-point-desc">
               SonarQube 정적 분석으로 코드 품질 이슈를 수치화하고 개선했습니다.
-              리소스 누수(try-with-resources 미적용) · Integer 동등 비교 오류(== → .equals()) · NPE 위험(null 체크 누락) · 삭제 실패 무시 · 불필요한 boxing 등 총 6개 항목을 수정했습니다.
               Bugs 12건 → 2건, Blocker 3건 → 0건, Reliability 등급 E → C로 개선했습니다.
             </p>
-            
             <a class="detail-deploy-link" href="https://www.canva.com/design/DAHJCs43oCs/6lQDrUlw5IiTpyogwkP-Tw/edit?ui=e30" target="_blank" style="margin-top:10px;">📄 소나큐브 PPT 보기 →</a>
+          </div>
+
+          <!-- 07 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">07</p>
+            <p class="detail-point-title">복합 인덱스 적용 — Oracle DBMS_XPLAN 실측 성능 검증</p>
+            <p class="detail-point-desc">
+              날짜 기반 예약 조회 시 발생하는 Full Scan 문제를 해결하기 위해 복합 인덱스를 적용하고,
+              Oracle <code class="inline">DBMS_XPLAN</code>과 <code class="inline">SET TIMING</code>으로 실측 검증했습니다.<br><br>
+              <b>① RESERVATION 테이블 (10,115건)</b> — <code class="inline">CHECKIN_DATE + CHECKOUT_DATE</code> 복합 인덱스 적용 후
+              Cost <b>68 → 2 (약 97% 감소)</b>를 확인했습니다.<br><br>
+              <b>② ROOM_STOCK 테이블 (9,855건)</b> — <code class="inline">(ROOM_TYPE_ID, STAY_DATE)</code> 복합 Unique 인덱스 적용 후
+              실행시간 <b>0.115초 → 0.042초 (약 63% 단축)</b>를 SET TIMING으로 실측했습니다.
+            </p>
+            <table class="perf-table">
+              <thead>
+                <tr>
+                  <th style="width:17%">테이블</th>
+                  <th style="width:26%">인덱스 컬럼</th>
+                  <th style="width:20%">실행계획 · Before</th>
+                  <th style="width:20%">실행계획 · After</th>
+                  <th style="width:17%">개선율</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="font-size:13px;font-weight:600;color:#000;">RESERVATION</div>
+                    <div style="font-size:11px;color:#888;margin-top:3px;">10,115건</div>
+                  </td>
+                  <td><code style="font-size:12px;color:#555;background:#f5f5f5;border-radius:6px;padding:4px 10px;line-height:1.6;display:inline-block;">CHECKIN_DATE<br>+ CHECKOUT_DATE</code></td>
+                  <td>
+                    <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;">
+                      <span class="perf-scan">TABLE ACCESS FULL</span>
+                      <span class="perf-bad">Cost 68</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;">
+                      <span class="perf-scan">INDEX RANGE SCAN</span>
+                      <span class="perf-good">Cost 2</span>
+                    </div>
+                  </td>
+                  <td><span class="perf-improve">↓ 97% 감소</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div style="font-size:13px;font-weight:600;color:#000;">ROOM_STOCK</div>
+                    <div style="font-size:11px;color:#888;margin-top:3px;">9,855건</div>
+                  </td>
+                  <td><code style="font-size:12px;color:#555;background:#f5f5f5;border-radius:6px;padding:4px 10px;line-height:1.6;display:inline-block;">ROOM_TYPE_ID<br>+ STAY_DATE</code></td>
+                  <td>
+                    <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;">
+                      <span class="perf-scan">TABLE ACCESS FULL</span>
+                      <span class="perf-bad">0.115초</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;">
+                      <span class="perf-scan">INDEX RANGE SCAN</span>
+                      <span class="perf-good">0.042초</span>
+                    </div>
+                  </td>
+                  <td><span class="perf-improve">↓ 63% 단축</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="detail-point-desc" style="margin-top:12px;font-size:13px;color:#666;">
+              ※ B+Tree 인덱스 구조상 선두 컬럼(ROOM_TYPE_ID)으로 시작점을 찾고, 리프 노드 간 연결을 통해 날짜 범위를 순차 접근하는 방식으로 불필요한 디스크 I/O를 최소화했습니다.
+            </p>
+            <a class="detail-deploy-link" href="https://lhk9311.tistory.com/2" target="_blank" style="margin-top:6px;">📝 인덱스 구조 + 실측 검증 블로그 →</a>
           </div>
 
         </div>
@@ -632,7 +433,7 @@
           <div class="detail-deploy-card">
             <p class="detail-deploy-card-label">배포 블로그 (상세)</p>
             <p class="detail-deploy-card-value">
-              <a class="detail-deploy-link" href="https://lhk9311.tistory.com/entry/배포-Spring-Boot-Jenkins-CICD-Docker-Oracle-XEDocker-AWS-EC2-배포-정리" target="_blank">Tistory 포스팅 보기 →</a>
+              <a class="detail-deploy-link" href="https://lhk9311.tistory.com/entry/%EB%B0%B0%ED%8F%AC-Spring-Boot-Jenkins-CICD-Docker-Oracle-XEDocker-AWS-EC2-%EB%B0%B0%ED%8F%AC-%EC%A0%95%EB%A6%AC" target="_blank">Tistory 포스팅 보기 →</a>
             </p>
           </div>
         </div>
@@ -641,24 +442,14 @@
     </div>
 
     <script>
-      // 헤더 스크롤 그림자
       const header = document.querySelector('.desktop-header')
       window.addEventListener('scroll', () => {
-        header.style.boxShadow = window.scrollY > 10
-          ? '0 2px 20px rgba(0,0,0,0.08)'
-          : 'none'
+        header.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none'
       })
-
-      // 본문 섹션 스크롤 페이드인
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('visible')
-        })
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible') })
       }, { threshold: 0.1 })
-
       document.querySelectorAll('.detail-body > *').forEach(el => observer.observe(el))
-
-      // 커스텀 커서
       const cursor = document.createElement('div')
       const cursorDot = document.createElement('div')
       cursor.style.cssText = `position:fixed;width:36px;height:36px;border:2px solid #21a0aa;border-radius:50%;pointer-events:none;z-index:99999;transition:transform 0.15s ease;transform:translate(-50%,-50%);`
@@ -671,17 +462,12 @@
         cursorDot.style.left = e.clientX + 'px'
         cursorDot.style.top = e.clientY + 'px'
       })
-
-      // 맨 위로 버튼
       const scrollTopBtn = document.createElement('button')
       scrollTopBtn.innerHTML = '↑'
       scrollTopBtn.className = 'scroll-top-btn'
       document.body.appendChild(scrollTopBtn)
-      window.addEventListener('scroll', () => {
-        scrollTopBtn.classList.toggle('visible', window.scrollY > 300)
-      })
+      window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('visible', window.scrollY > 300) })
       scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
     </script>
   </body>
 </html>
-<!-- siseon point num/img style injected -->
