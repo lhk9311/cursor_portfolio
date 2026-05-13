@@ -1620,16 +1620,16 @@ body {
 }
 
 section {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-section.visible {
+/*section.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
+*/
 .hero-btn {
   display: inline-block;
   margin-top: 32px;
