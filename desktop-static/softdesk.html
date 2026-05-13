@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HAN.KYOUNG'S PORTFOLIO — SoftDesk AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body { background-color: #fff; }
+
+      /* ── Hero ── */
+      .detail-hero {
+        width: 100%;
+        background-color: var(--color-black);
+        padding: 120px 0 80px 0;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .detail-hero-inner {
+        width: min(100%, 1050px);
+        margin-inline: auto;
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .detail-back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-family-Montserrat);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-accent-main);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: gap 0.2s ease;
+        width: fit-content;
+      }
+      .detail-back-btn:hover { gap: 14px; }
+      .detail-hero-num {
+        font-family: var(--font-family-Montserrat);
+        font-weight: 900;
+        font-size: 13.5px;
+        color: var(--color-accent-main);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .detail-hero-title {
+        margin: 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 900;
+        font-size: 90px;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        color: var(--color-white);
+        text-transform: uppercase;
+      }
+      .detail-hero-caption {
+        margin: 0;
+        font-family: var(--font-family-pp-editorial-new);
+        font-size: 22px;
+        font-style: italic;
+        color: var(--color-gray);
+      }
+      .detail-hero-meta {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .detail-meta-badge {
+        display: inline-block;
+        font-family: var(--font-family-Montserrat);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.25);
+        color: rgba(255,255,255,0.75);
+        white-space: nowrap;
+      }
+      .detail-hero-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .detail-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 40px;
+        font-family: var(--font-family-pretendard);
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+      }
+      .detail-link-btn--primary { background-color: var(--color-accent-main); color: var(--color-white); }
+      .detail-link-btn--primary:hover { background-color: #1b8a93; transform: translateY(-2px); }
+      .detail-link-btn--outline { background-color: transparent; color: var(--color-white); border: 1.5px solid rgba(255,255,255,0.35); }
+      .detail-link-btn--outline:hover { background-color: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.7); transform: translateY(-2px); }
+
+      /* ── Body ── */
+      .detail-body {
+        width: min(100%, 1050px);
+        margin-inline: auto;
+        padding: 80px 40px 120px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
+      .detail-section-label {
+        font-family: var(--font-family-Montserrat);
+        font-weight: 800;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-accent-main);
+        border-bottom: 1.5px solid var(--color-accent-main);
+        padding-bottom: 8px;
+        margin: 0 0 28px 0;
+      }
+
+      /* ── Stack ── */
+      .detail-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .detail-stack-card {
+        border: 1px solid #e8e8e8;
+        border-radius: 14px;
+        padding: 22px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background-color: #fafafa;
+      }
+      .detail-stack-card-title {
+        margin: 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-gray);
+      }
+      .detail-stack-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+      .detail-stack-tag {
+        font-family: var(--font-family-pretendard);
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--color-black);
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        padding: 4px 12px;
+        white-space: nowrap;
+      }
+
+      /* ── Point Card ── */
+      .detail-points { display: flex; flex-direction: column; gap: 20px; }
+      .detail-point-card {
+        border-left: 3px solid var(--color-accent-main);
+        padding: 24px 28px;
+        background-color: #f8fcfc;
+        border-radius: 0 12px 12px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .detail-point-title {
+        margin: 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        color: var(--color-black);
+      }
+      .detail-point-desc {
+        margin: 0;
+        font-family: var(--font-family-pretendard);
+        font-size: 14px;
+        line-height: 1.8;
+        color: #444;
+      }
+      .detail-point-num {
+        margin: 0 0 6px 0;
+        font-family: var(--font-family-Montserrat);
+        font-weight: 900;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        color: var(--color-accent-main);
+      }
+      .detail-point-img-wrap {
+        margin-top: 16px;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #e8e8e8;
+      }
+      .detail-point-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* ── Deploy ── */
+      .detail-deploy-row { display: flex; flex-direction: row; gap: 20px; flex-wrap: wrap; }
+      .detail-deploy-card {
+        flex: 1;
+        min-width: 200px;
+        border: 1px solid #e8e8e8;
+        border-radius: 14px;
+        padding: 22px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background-color: #fafafa;
+      }
+      .detail-deploy-card-label {
+        font-family: var(--font-family-Montserrat);
+        font-weight: 700;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: var(--color-gray);
+        text-transform: uppercase;
+      }
+      .detail-deploy-card-value {
+        font-family: var(--font-family-pretendard);
+        font-size: 14px;
+        color: var(--color-black);
+        line-height: 1.6;
+        margin: 0;
+      }
+      .detail-deploy-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--font-family-pretendard);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-accent-main);
+        text-decoration: none;
+        margin-top: 4px;
+        transition: gap 0.2s ease;
+      }
+      .detail-deploy-link:hover { gap: 10px; text-decoration: underline; }
+
+      .detail-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #ececec;
+        border: none;
+        margin: 0;
+      }
+
+      /* ── Arch Flow ── */
+      .arch-flow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        background: #fff;
+        border: 0.75px solid #e0e0e0;
+        border-radius: 14px;
+        padding: 28px 24px;
+        overflow-x: auto;
+      }
+      .arch-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+        min-width: 100px;
+        text-align: center;
+      }
+      .arch-step-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+      .arch-step-icon--blue  { background: #e8f5fb; }
+      .arch-step-icon--green { background: #e3f5ed; }
+      .arch-step-icon--orange{ background: #fff3e8; }
+      .arch-step-icon--red   { background: #fef0f0; }
+      .arch-step-label {
+        font-family: var(--font-family-Montserrat);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #888;
+      }
+      .arch-step-desc {
+        font-family: var(--font-family-pretendard);
+        font-size: 12px;
+        color: #555;
+        line-height: 1.5;
+      }
+      .arch-arrow {
+        font-size: 18px;
+        color: #ccc;
+        flex-shrink: 0;
+        padding: 0 4px;
+        align-self: center;
+        padding-bottom: 24px;
+      }
+      .arch-branch {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        flex: 1;
+        min-width: 130px;
+      }
+      .arch-branch-item {
+        border-radius: 10px;
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      .arch-branch-item--faq   { background: #e3f5ed; border: 0.75px solid #a8dfc4; }
+      .arch-branch-item--gpt   { background: #fff3e8; border: 0.75px solid #f5c98a; }
+      .arch-branch-title {
+        font-family: var(--font-family-Montserrat);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .arch-branch-title--faq  { color: #0a6640; }
+      .arch-branch-title--gpt  { color: #8a4a00; }
+      .arch-branch-desc {
+        font-family: var(--font-family-pretendard);
+        font-size: 12px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      /* ── Socket 비교표 ── */
+      .compare-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 0.75px solid #e0e0e0;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 20px;
+      }
+      .compare-table th {
+        background-color: #f5f5f5;
+        color: #888;
+        font-family: var(--font-family-Montserrat);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 10px 16px;
+        text-align: left;
+        border-bottom: 0.75px solid #e0e0e0;
+      }
+      .compare-table td {
+        padding: 16px 16px;
+        border-bottom: 0.75px solid #e0e0e0;
+        font-family: var(--font-family-pretendard);
+        font-size: 13px;
+        color: #444;
+        vertical-align: middle;
+        line-height: 1.6;
+      }
+      .compare-table tr:last-child td { border-bottom: none; }
+      .compare-table td:first-child {
+        font-family: var(--font-family-Montserrat);
+        font-size: 11px;
+        font-weight: 700;
+        color: #222;
+        letter-spacing: 0.04em;
+        background: #fafafa;
+        border-right: 0.75px solid #e0e0e0;
+        white-space: nowrap;
+      }
+      .badge-chosen {
+        display: inline-block;
+        background: #e3f5ed;
+        color: #0a6640;
+        font-family: var(--font-family-Montserrat);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 3px 10px;
+        border-radius: 20px;
+        border: 0.75px solid #a8dfc4;
+        white-space: nowrap;
+        margin-left: 6px;
+      }
+      .badge-rejected {
+        display: inline-block;
+        background: #fef0f0;
+        color: #993c1d;
+        font-family: var(--font-family-Montserrat);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 3px 10px;
+        border-radius: 20px;
+        border: 0.75px solid #f5b8a8;
+        white-space: nowrap;
+        margin-left: 6px;
+      }
+
+      /* ── Timing 측정 결과 ── */
+      .timing-result-box {
+        background: #fafafa;
+        border: 0.75px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 22px 24px;
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .timing-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .timing-label {
+        font-family: var(--font-family-Montserrat);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #888;
+        min-width: 130px;
+      }
+      .timing-bar-wrap {
+        flex: 1;
+        min-width: 120px;
+        height: 8px;
+        background: #eee;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .timing-bar {
+        height: 100%;
+        border-radius: 10px;
+        background: var(--color-accent-main);
+      }
+      .timing-value {
+        font-family: var(--font-family-Montserrat);
+        font-size: 13px;
+        font-weight: 700;
+        color: #222;
+        white-space: nowrap;
+      }
+      .timing-note {
+        font-family: var(--font-family-pretendard);
+        font-size: 12px;
+        color: #888;
+        line-height: 1.6;
+      }
+
+      /* ── 트러블슈팅 ── */
+      .trouble-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+      .trouble-item {
+        background: #fff;
+        border: 0.75px solid #e8e8e8;
+        border-radius: 10px;
+        padding: 16px 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        align-items: start;
+      }
+      .trouble-col-label {
+        font-family: var(--font-family-Montserrat);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-accent-main);
+        margin-bottom: 6px;
+      }
+      .trouble-col-text {
+        font-family: var(--font-family-pretendard);
+        font-size: 13px;
+        color: #444;
+        line-height: 1.6;
+      }
+
+      /* ── 향후 개선 ── */
+      .improve-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .improve-card {
+        border: 0.75px solid #e8e8e8;
+        border-radius: 12px;
+        padding: 20px 22px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .improve-card-icon { font-size: 20px; }
+      .improve-card-title {
+        font-family: var(--font-family-Montserrat);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #222;
+        margin: 0;
+      }
+      .improve-card-desc {
+        font-family: var(--font-family-pretendard);
+        font-size: 13px;
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .improve-status {
+        display: inline-block;
+        margin-top: 4px;
+        font-family: var(--font-family-Montserrat);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 3px 10px;
+        border-radius: 20px;
+        width: fit-content;
+      }
+      .improve-status--todo   { background: #fff3e8; color: #8a4a00; border: 0.75px solid #f5c98a; }
+      .improve-status--study  { background: #eef3fe; color: #1d3f99; border: 0.75px solid #a8bdf5; }
+
+      code.inline {
+        background: #eef6f7;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+
+      /* ── Scroll animate ── */
+      .detail-body > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .detail-body > *.visible {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="desktop-header">
+      <div class="desktop-header-inner">
+        <div class="logo"><span class="logo-text">HAN.KYOUNG'S PORTFOLIO</span></div>
+        <nav class="gnb" aria-label="주요 메뉴">
+          <a class="gnb-link" href="index.html">HOME</a>
+          <a class="gnb-link" href="index.html#about">ABOUT</a>
+          <a class="gnb-link" href="index.html#skill">SKILL</a>
+          <a class="gnb-link" href="index.html#project">PROJECT</a>
+          <a class="gnb-link" href="index.html#contact">CONTACT</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ── HERO ── -->
+    <section class="detail-hero">
+      <div class="detail-hero-inner">
+        <a class="detail-back-btn" href="index.html#project">← Back to Projects</a>
+        <p class="detail-hero-num">03 · Personal Project</p>
+        <h1 class="detail-hero-title">SoftDesk AI</h1>
+        <p class="detail-hero-caption">— SW License Helpdesk Chatbot</p>
+        <div class="detail-hero-meta">
+          <span class="detail-meta-badge">개인 프로젝트 (100%)</span>
+          <span class="detail-meta-badge">2026.05</span>
+          <span class="detail-meta-badge">Node.js · React · MySQL · OpenAI API</span>
+          <span class="detail-meta-badge">AWS EC2 배포 완료</span>
+        </div>
+        <div class="detail-hero-links">
+          <a class="detail-link-btn detail-link-btn--primary" href="https://github.com/lhk9311/chatbot-backend" target="_blank">🐙 Backend</a>
+          <a class="detail-link-btn detail-link-btn--outline" href="https://github.com/lhk9311/chatbot-frontend" target="_blank">🐙 Frontend</a>
+          <a class="detail-link-btn detail-link-btn--outline" href="http://52.78.28.91:8082/" target="_blank">🌐 배포 URL</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="detail-body">
+
+      <!-- 기술 스택 -->
+      <div>
+        <p class="detail-section-label">Tech Stack</p>
+        <div class="detail-stack-grid">
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Backend</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">Node.js</span>
+              <span class="detail-stack-tag">Express</span>
+              <span class="detail-stack-tag">Socket.io</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Frontend</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">React</span>
+              <span class="detail-stack-tag">JavaScript</span>
+              <span class="detail-stack-tag">Axios</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Database</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">MySQL 8.0</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">AI</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">OpenAI API</span>
+              <span class="detail-stack-tag">gpt-4.1-mini</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Infra / DevOps</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">AWS EC2 (Ubuntu 24.04)</span>
+              <span class="detail-stack-tag">Nginx</span>
+              <span class="detail-stack-tag">PM2</span>
+            </div>
+          </div>
+          <div class="detail-stack-card">
+            <p class="detail-stack-card-title">Background</p>
+            <div class="detail-stack-tags">
+              <span class="detail-stack-tag">dotenv</span>
+              <span class="detail-stack-tag">cors</span>
+              <span class="detail-stack-tag">WinSCP</span>
+              <span class="detail-stack-tag">PuTTY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <!-- Key Technical Points -->
+      <div>
+        <p class="detail-section-label">Key Technical Points</p>
+        <div class="detail-points">
+
+          <!-- 01 Hybrid Architecture -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">01</p>
+            <p class="detail-point-title">Hybrid 챗봇 아키텍처 설계 — FAQ 우선 처리 → GPT Fallback</p>
+            <p class="detail-point-desc">
+              단순히 OpenAI API를 호출하는 구조 대신, <b>API 호출 비용과 응답 속도</b>를 고려한 Hybrid 아키텍처를 설계했습니다.<br><br>
+              사용자 질문이 들어오면 먼저 DB의 FAQ 데이터와 매칭을 시도하고, 매칭 성공 시 즉시 응답하며 OpenAI API 호출을 생략합니다.
+              FAQ 미매칭 질문만 GPT로 전달하는 구조로, 실제 테스트 기준 전체 문의의 약 <b>60~70%를 FAQ 기반으로 처리</b>하여 API 호출량을 줄이고 응답 속도를 개선했습니다.
+            </p>
+
+            <!-- 아키텍처 플로우 다이어그램 -->
+            <div class="arch-flow">
+              <div class="arch-step">
+                <div class="arch-step-icon arch-step-icon--blue">💬</div>
+                <p class="arch-step-label">User</p>
+                <p class="arch-step-desc">질문 입력<br>(Socket 이벤트)</p>
+              </div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-step">
+                <div class="arch-step-icon arch-step-icon--blue">🔍</div>
+                <p class="arch-step-label">SW Alias</p>
+                <p class="arch-step-desc">소프트웨어명<br>별칭 검색</p>
+              </div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-step">
+                <div class="arch-step-icon arch-step-icon--blue">📋</div>
+                <p class="arch-step-label">FAQ Search</p>
+                <p class="arch-step-desc">DB LIKE<br>부분 검색</p>
+              </div>
+              <div class="arch-arrow">→</div>
+              <div class="arch-branch">
+                <div class="arch-branch-item arch-branch-item--faq">
+                  <p class="arch-branch-title arch-branch-title--faq">✅ FAQ 매칭 (60~70%)</p>
+                  <p class="arch-branch-desc">DB 응답 즉시 반환<br>API 호출 없음</p>
+                </div>
+                <div class="arch-branch-item arch-branch-item--gpt">
+                  <p class="arch-branch-title arch-branch-title--gpt">🤖 미매칭 → GPT Fallback</p>
+                  <p class="arch-branch-desc">OpenAI API 호출<br>관리자 패널 등록</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="detail-point-desc" style="margin-top:20px;">
+              <b>FAQ 검색 정확도 개선</b><br>
+              초기 완전일치(<code class="inline">=</code>) 방식은 "설치 방법 알려줘" 같은 자연어 질문에 대응하지 못했습니다.
+              <code class="inline">WHERE LOWER(?) LIKE CONCAT('%', LOWER(question_keyword), '%')</code> 기반 부분 검색으로 변경하고,
+              <code class="inline">ORDER BY CHAR_LENGTH(question_keyword) DESC</code>를 추가해 더 구체적인 키워드가 우선 매칭되도록 개선했습니다.
+            </p>
+          </div>
+
+          <!-- 02 Socket.io -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">02</p>
+            <p class="detail-point-title">Socket.io WebSocket 실시간 통신 — HTTP Polling 대비 선택 근거</p>
+            <p class="detail-point-desc">
+              GPT 응답은 평균 2~4초 이상의 대기 시간이 발생합니다. HTTP REST 방식은 응답이 완료되어야 클라이언트로 전달되는 Request/Response 구조라,
+              GPT 응답 대기 중 클라이언트 측에서 별도 폴링이 필요하거나 연결이 블로킹됩니다.<br><br>
+              <b>Socket.io 기반 WebSocket 연결</b>을 선택하여 서버와 클라이언트 간 상시 연결을 유지함으로써,
+              GPT 응답 대기 중에도 이벤트 기반으로 다른 메시지 송수신이 가능한 구조를 구성했습니다.
+              FAQ 응답(즉시)과 GPT 응답(지연)을 동일한 이벤트 채널로 처리할 수 있어 프론트엔드 구조도 단순화됐습니다.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th style="width:18%">항목</th>
+                  <th>HTTP REST</th>
+                  <th>WebSocket (Socket.io) <span class="badge-chosen">채택</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>연결 방식</td>
+                  <td>요청마다 연결/해제</td>
+                  <td>상시 연결 유지</td>
+                </tr>
+                <tr>
+                  <td>GPT 대기 중</td>
+                  <td>클라이언트 블로킹 또는 폴링 필요</td>
+                  <td>이벤트 기반으로 다른 처리 가능</td>
+                </tr>
+                <tr>
+                  <td>관리자 패널</td>
+                  <td>별도 폴링 API 필요</td>
+                  <td><code class="inline">admin-request</code> 이벤트로 실시간 동기화</td>
+                </tr>
+                <tr>
+                  <td>코드 복잡도</td>
+                  <td>FAQ/GPT 분기마다 별도 endpoint</td>
+                  <td><code class="inline">chat message</code> 단일 이벤트로 통합 처리</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="detail-point-desc" style="margin-top:16px;">
+              <b>React 리렌더링 시 이벤트 중복 등록 문제</b><br>
+              Socket.io 이벤트 리스너가 컴포넌트 리렌더링 시 중복 등록되어 동일 응답이 여러 번 출력되는 문제가 발생했습니다.
+              <code class="inline">useEffect</code> cleanup 함수에서 <code class="inline">socket.off("chat response")</code>,
+              <code class="inline">socket.off("admin-request")</code>를 명시적으로 호출하여 해결했습니다.
+            </p>
+          </div>
+
+          <!-- 03 GPT 응답시간 측정 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">03</p>
+            <p class="detail-point-title">GPT 응답 시간 측정 — Date.now() 기반 LLM Latency 분석 & 로딩 UX</p>
+            <p class="detail-point-desc">
+              LLM API 호출 전후 <code class="inline">Date.now()</code>로 응답 시간을 측정하는 로직을 구현해
+              GPT Fallback 경로의 평균 응답 시간이 <b>2~4초</b> 수준임을 실측했습니다.<br><br>
+              이 수치를 바탕으로 GPT 호출 시점에 <b>"🧠 AI 답변 생성중..."</b> 로딩 메시지를 Socket 이벤트로 먼저 클라이언트에 전송하고,
+              응답 도착 시 로딩 메시지를 실제 답변으로 교체하는 UX 구조를 구성했습니다.
+              사용자는 응답 대기 중에도 피드백을 받을 수 있어 이탈률을 줄일 수 있습니다.
+            </p>
+
+            <div class="timing-result-box">
+              <p style="font-family:var(--font-family-Montserrat);font-size:10px;font-weight:700;letter-spacing:0.1em;color:#888;text-transform:uppercase;margin:0 0 4px 0;">측정 결과 (로컬 환경 기준)</p>
+              <div class="timing-row">
+                <span class="timing-label">FAQ 응답</span>
+                <div class="timing-bar-wrap">
+                  <div class="timing-bar" style="width:5%;background:#21a0aa;"></div>
+                </div>
+                <span class="timing-value">~100ms 이내</span>
+              </div>
+              <div class="timing-row">
+                <span class="timing-label">GPT Fallback</span>
+                <div class="timing-bar-wrap">
+                  <div class="timing-bar" style="width:80%;background:#f5a623;"></div>
+                </div>
+                <span class="timing-value">평균 2~4초</span>
+              </div>
+              <p class="timing-note">※ Date.now() 기반 실측. gpt-4.1-mini 기준, 네트워크 환경에 따라 변동 가능.</p>
+            </div>
+
+            <p class="detail-point-desc" style="margin-top:16px;">
+              또한 AI 응답에 포함된 <code class="inline">\n</code> 줄바꿈 문자가 React에서 렌더링되지 않는 문제를
+              <code class="inline">style={{ whiteSpace: 'pre-line' }}</code>을 메시지 컴포넌트에 적용해 해결하고, GPT 응답 가독성을 개선했습니다.
+            </p>
+          </div>
+
+          <!-- 04 배포 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">04</p>
+            <p class="detail-point-title">AWS EC2 수동 배포 — Node.js + Nginx + PM2 직접 구성</p>
+            <p class="detail-point-desc">
+              CIEL 프로젝트에서 Jenkins CI/CD + Docker 자동화 배포를 경험한 후,
+              이 프로젝트에서는 <b>자동화 없이 서버 구성 전 과정을 직접 수행</b>하며 각 컴포넌트 역할을 체득했습니다.<br><br>
+              로컬에서 <code class="inline">npm run build</code>로 React를 빌드하고 WinSCP로 EC2에 업로드,
+              Node.js 백엔드는 <b>PM2</b>로 프로세스를 관리해 EC2 재시작 시에도 자동 복구되도록 구성했습니다.
+              Nginx는 포트 8082에서 React 빌드 파일을 서빙하며 백엔드(포트 4000)와 분리된 구조로 운영됩니다.<br><br>
+              MySQL 덤프 파일을 로컬에서 생성 후 EC2로 이전하는 과정, <code class="inline">.env</code> 파일 EC2 직접 생성을 통한 API 키 보안 관리도 직접 구성했습니다.
+            </p>
+
+            <!-- 트러블슈팅 표 -->
+            <p style="font-family:var(--font-family-Montserrat);font-size:10px;font-weight:700;letter-spacing:0.1em;color:#888;text-transform:uppercase;margin:20px 0 0 0;">⚠ 배포 과정 트러블슈팅 (7건)</p>
+            <div class="trouble-list">
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:#f5f5f5;border:0.75px solid #e0e0e0;border-radius:10px 10px 0 0;padding:8px 20px;">
+                <span style="font-family:var(--font-family-Montserrat);font-size:10px;font-weight:700;letter-spacing:0.08em;color:#888;text-transform:uppercase;">문제</span>
+                <span style="font-family:var(--font-family-Montserrat);font-size:10px;font-weight:700;letter-spacing:0.08em;color:#888;text-transform:uppercase;">원인</span>
+                <span style="font-family:var(--font-family-Montserrat);font-size:10px;font-weight:700;letter-spacing:0.08em;color:#888;text-transform:uppercase;">해결</span>
+              </div>
+              <div class="trouble-item" style="border-radius:0;">
+                <p class="trouble-col-text"><code class="inline">EADDRINUSE :3000</code></p>
+                <p class="trouble-col-text">기존 프로세스가 살아있는 채로 재실행</p>
+                <p class="trouble-col-text"><code class="inline">netstat -ano</code> + <code class="inline">taskkill</code>으로 PID 강제 종료</p>
+              </div>
+              <div class="trouble-item" style="border-radius:0;">
+                <p class="trouble-col-text">CORS 에러 (포트 불일치)</p>
+                <p class="trouble-col-text">React가 3001→3002로 자동 포트 변경, server.js CORS 미등록</p>
+                <p class="trouble-col-text">Socket.io CORS origin 배열에 실제 접속 URL 추가</p>
+              </div>
+              <div class="trouble-item" style="border-radius:0;">
+                <p class="trouble-col-text">EC2 포트 3000 충돌</p>
+                <p class="trouble-col-text">CIEL 프로젝트(Docker)가 이미 3000 점유</p>
+                <p class="trouble-col-text">server.js 포트 4000으로 변경</p>
+              </div>
+              <div class="trouble-item" style="border-radius:0;">
+                <p class="trouble-col-text">Nginx 500 (Permission denied)</p>
+                <p class="trouble-col-text"><code class="inline">/home/ubuntu</code> 디렉토리 권한이 Nginx 접근 불허</p>
+                <p class="trouble-col-text"><code class="inline">chmod 755 /home/ubuntu</code></p>
+              </div>
+              <div class="trouble-item" style="border-radius:0;">
+                <p class="trouble-col-text">PM2 errored 오판</p>
+                <p class="trouble-col-text">이전 에러 캐시가 잔존, 실제는 정상 실행 중</p>
+                <p class="trouble-col-text"><code class="inline">pm2 logs</code>로 실제 상태 직접 확인</p>
+              </div>
+              <div class="trouble-item" style="border-radius:0;">
+                <p class="trouble-col-text">build 폴더 중첩 (<code class="inline">build/build/</code>)</p>
+                <p class="trouble-col-text">WinSCP 업로드 시 경로 설정 오류</p>
+                <p class="trouble-col-text"><code class="inline">cp -r</code>로 이동 후 중첩 폴더 삭제</p>
+              </div>
+              <div class="trouble-item" style="border-radius:0 0 10px 10px;">
+                <p class="trouble-col-text"><code class="inline">Cannot find module 'mysql2'</code></p>
+                <p class="trouble-col-text">node_modules 미업로드, EC2에서 npm install 누락</p>
+                <p class="trouble-col-text"><code class="inline">npm install mysql2</code> + PM2 재시작</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 향후 개선 -->
+          <div class="detail-point-card">
+            <p class="detail-point-num">05</p>
+            <p class="detail-point-title">현재 한계 인식 & 향후 개선 방향</p>
+            <p class="detail-point-desc">
+              토이 프로젝트로서 기능 완성에 집중했으며, 실제 운영 환경으로 발전시키기 위한 개선 포인트를 다음과 같이 식별했습니다.
+            </p>
+            <div class="improve-grid">
+              <div class="improve-card">
+                <div class="improve-card-icon">📧</div>
+                <p class="improve-card-title">SMTP 이메일 알림 연동</p>
+                <p class="improve-card-desc">관리자 미처리 문의가 쌓일 경우 담당자 이메일로 자동 알림을 발송하는 기능. JavaMail 또는 Nodemailer 활용 예정.</p>
+                <span class="improve-status improve-status--study">학습 예정</span>
+              </div>
+              <div class="improve-card">
+                <div class="improve-card-icon">🔍</div>
+                <p class="improve-card-title">벡터 DB 기반 의미론적 FAQ 검색</p>
+                <p class="improve-card-desc">현재 LIKE 키워드 매칭은 "설치가 안 돼요" 같은 표현 차이에 취약. 임베딩 + 벡터 유사도 검색으로 정확도 향상 가능.</p>
+                <span class="improve-status improve-status--study">학습 예정</span>
+              </div>
+              <div class="improve-card">
+                <div class="improve-card-icon">🐳</div>
+                <p class="improve-card-title">Docker + Jenkins CI/CD 자동화</p>
+                <p class="improve-card-desc">현재 WinSCP 수동 배포 방식. CIEL에서 구축한 Jenkins + Docker 파이프라인을 Node.js 환경에도 적용할 예정.</p>
+                <span class="improve-status improve-status--todo">개선 예정</span>
+              </div>
+              <div class="improve-card">
+                <div class="improve-card-icon">💬</div>
+                <p class="improve-card-title">GPT 응답 스트리밍</p>
+                <p class="improve-card-desc">현재 GPT 응답 완료 후 일괄 전송. OpenAI Streaming API + Socket.io를 결합해 타이핑 효과처럼 실시간 청크 전송으로 UX 개선 가능.</p>
+                <span class="improve-status improve-status--todo">개선 예정</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="detail-divider" />
+
+      <!-- 배포 정보 -->
+      <div>
+        <p class="detail-section-label">Deployment</p>
+        <div class="detail-deploy-row">
+          <div class="detail-deploy-card">
+            <p class="detail-deploy-card-label">Environment</p>
+            <p class="detail-deploy-card-value">AWS EC2 (Ubuntu 24.04) · Nginx (8082) · PM2 · MySQL 8.0</p>
+          </div>
+          <div class="detail-deploy-card">
+            <p class="detail-deploy-card-label">프로세스 구성</p>
+            <p class="detail-deploy-card-value">Node.js 백엔드 (포트 4000, PM2) · React 빌드 → Nginx 서빙 (포트 8082)</p>
+          </div>
+          <div class="detail-deploy-card">
+            <p class="detail-deploy-card-label">배포 블로그</p>
+            <p class="detail-deploy-card-value">
+              <a class="detail-deploy-link" href="https://lhk9311.tistory.com/12" target="_blank">Node.js + React + MySQL EC2 배포 →</a>
+              <a class="detail-deploy-link" href="https://lhk9311.tistory.com/13" target="_blank">Express + Socket.io 코드 구조 →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /detail-body -->
+
+    <script>
+      // 헤더 스크롤 그림자
+      const header = document.querySelector('.desktop-header')
+      window.addEventListener('scroll', () => {
+        header.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none'
+      })
+
+      // 스크롤 애니메이션
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible') })
+      }, { threshold: 0.08 })
+      document.querySelectorAll('.detail-body > *').forEach(el => observer.observe(el))
+
+      // 커스텀 커서
+      const cursor = document.createElement('div')
+      const cursorDot = document.createElement('div')
+      cursor.style.cssText = `position:fixed;width:36px;height:36px;border:2px solid #21a0aa;border-radius:50%;pointer-events:none;z-index:99999;transition:transform 0.15s ease;transform:translate(-50%,-50%);`
+      cursorDot.style.cssText = `position:fixed;width:6px;height:6px;background:#21a0aa;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);`
+      document.body.appendChild(cursor)
+      document.body.appendChild(cursorDot)
+      document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px'
+        cursor.style.top = e.clientY + 'px'
+        cursorDot.style.left = e.clientX + 'px'
+        cursorDot.style.top = e.clientY + 'px'
+      })
+
+      // 스크롤 탑 버튼
+      const scrollTopBtn = document.createElement('button')
+      scrollTopBtn.innerHTML = '↑'
+      scrollTopBtn.className = 'scroll-top-btn'
+      document.body.appendChild(scrollTopBtn)
+      window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('visible', window.scrollY > 300) })
+      scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
+    </script>
+  </body>
+</html>

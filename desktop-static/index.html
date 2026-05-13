@@ -138,11 +138,7 @@
                   </div>
                   <p class="career-desc">보험 상담 및 계약 관리</p>
                 </div>
-
-                <div class="about-info-block" style="margin-top:12px;">
-                 
-                  
-                </div>
+                <div class="about-info-block" style="margin-top:12px;"></div>
               </div>
             </div>
           </div>
@@ -450,8 +446,12 @@
           </div>
         </div>
 
-        <!-- 03 SoftDesk AI -->
-        <div class="teamproject-list teamproject-list--personal">
+        <!-- =====================================================
+             03 SoftDesk AI  ← 여기가 수정된 부분
+        ====================================================== -->
+        <div class="teamproject-list teamproject-list--personal"
+             onclick="location.href='softdesk.html'"
+             style="cursor:pointer;">
           <div class="left-box">
             <div class="num-title" style="display:flex;align-items:center;gap:12px;">
               <p class="num-title-text">03</p>
@@ -463,28 +463,37 @@
                   <p class="title-text">SoftDesk AI</p>
                 </div>
                 <div class="big-caption">
-                  <p class="big-caption-text">— SW License Chatbot</p>
+                  <p class="big-caption-text">— SW License Helpdesk Chatbot</p>
                 </div>
               </div>
               <div class="desc">
                 <div class="en-text">
                   <p class="en-text-body">
-                    사내 소프트웨어 라이선스 문의 AI 챗봇. Socket.io 실시간 통신 + OpenAI API(GPT-4.1-mini) 연동,
-                    FAQ DB 우선 매칭 후 미처리 시 GPT fallback 구조 설계. AWS EC2 + Nginx + PM2 배포.
+                    사내 소프트웨어 라이선스 문의 AI 챗봇.
+                    FAQ 우선 처리 → GPT Fallback 구조의 Hybrid 아키텍처 설계.
+                  </p>
+                  <p class="en-text-body" style="margin-top:6px;color:#5d5d5d;font-size:12.5px;">
+                    Socket.io 실시간 통신 · OpenAI API(gpt-4.1-mini) · AWS EC2 배포.
                   </p>
                 </div>
-                <div class="kr-text">
-                  <p class="kr-text-body">
-                    Node.js · Express · Socket.io · React · MySQL · OpenAI API · AWS EC2 · Nginx · PM2
-                  </p>
+                <div class="skill-tag-list" style="margin-top:10px;">
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">Express</span>
+                  <span class="skill-tag">Socket.io</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">MySQL</span>
+                  <span class="skill-tag">OpenAI API</span>
+                  <span class="skill-tag">AWS EC2</span>
+                  <span class="skill-tag">Nginx</span>
+                  <span class="skill-tag">PM2</span>
                 </div>
               </div>
               <div class="project-links-row">
-                <span class="caption-text">Personal Project(개인) · 담당 100% </span>
-                <div class="project-badge-group">
+                <span class="caption-text">Personal Project (개인) · 담당 100%</span>
+                <div style="display:flex;flex-direction:row;gap:8px;flex-wrap:wrap;margin-top:8px;">
+                  <span class="project-badge">상세보기 →</span>
                   <a class="project-badge" href="https://github.com/lhk9311/chatbot-backend" target="_blank" onclick="event.stopPropagation()">Backend →</a>
                   <a class="project-badge" href="https://github.com/lhk9311/chatbot-frontend" target="_blank" onclick="event.stopPropagation()">Frontend →</a>
-                  <a class="project-badge project-badge--blog" href="https://lhk9311.tistory.com/12" target="_blank" onclick="event.stopPropagation()">Blog →</a>
                 </div>
               </div>
             </div>
@@ -500,6 +509,7 @@
             />
           </div>
         </div>
+        <!-- ===================================================== -->
 
       </div>
     </section>
